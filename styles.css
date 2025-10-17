@@ -1,0 +1,608 @@
+@font-face {
+  font-family: 'NicoMoji';
+  src: url('font/NicoMoji-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.landing-page {
+  background-color: black;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.landing-page .AI-generated-orange {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 1024px;
+  object-fit: cover;
+}
+
+.landing-page .main-page-black-part {
+  position: absolute;
+  top: 1025px;
+  left: 0;
+  width: 100%;
+  height: 628px;
+  background-color: #000000;
+}
+
+.landing-page .frame {
+  position: absolute;
+  top: 109px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 409px;
+  background-color: #fea314;
+  border-radius: 50px;
+  box-shadow: 0px 4px 50px #00000040;
+  backdrop-filter: blur(50px) brightness(100%);
+  -webkit-backdrop-filter: blur(50px) brightness(100%);
+  opacity: 0.45;
+}
+
+.landing-page .view-chart {
+  position: absolute;
+  top: 427px;
+  left: 50%;
+  transform: translateX(calc(-100% - 107px));
+  width: 154px;
+  height: 52px;
+  display: flex;
+  background-color: #ff7411;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.landing-page .view-chart:hover {
+  transform: translateX(calc(-100% - 107px)) scale(1.15);
+  cursor: pointer;
+}
+
+
+
+.landing-page .start-learning {
+  margin-top: 10px;
+  width: 89px;
+  height: 32px;
+  margin-left: 32px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #030202;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.landing-page .view-components-wrapper {
+  position: absolute;
+  top: 427px;
+  left: 50%;
+  transform: translateX(107px);
+  background-color: #030202;
+  width: 154px;
+  height: 52px;
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.landing-page .view-components {
+  margin-top: 10px;
+  width: 123px;
+  height: 32px;
+  margin-left: 15px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #ff7411;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.landing-page .learn-about-every {
+  position: absolute;
+  top: 297px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(649px, 90%);
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #030202;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.landing-page .your-complete-guide {
+  position: absolute;
+  top: 142px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(947px, 90%);
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: transparent;
+  font-size: 58px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.landing-page .text-wrapper {
+  color: #ffffff;
+}
+
+.landing-page .span {
+  color: #ee8a10;
+}
+
+.landing-page .div {
+  position: absolute;
+  top: 1012px;
+  left: 0;
+  width: 100%;
+  height: 21px;
+  background-color: #ee8a10;
+}
+
+.landing-page .frame-2 {
+  position: absolute;
+  top: 218px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(870px, 90%);
+  height: 409px;
+  display: flex;
+  flex-direction: column;
+  gap: 84px;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0px 4px 50px #00000040;
+  backdrop-filter: blur(50px) brightness(100%);
+  -webkit-backdrop-filter: blur(50px) brightness(100%);
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.25) 100%
+    ), linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%);
+  opacity: 0.8;
+}
+
+.landing-page .computer-hardware {
+  margin-left: 24px;
+  width: 993px;
+  height: 146px;
+  margin-top: 67px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: transparent;
+  font-size: 58px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.landing-page .made-easy {
+  align-self: flex-end;
+  margin-right: -517px;
+  width: 993px;
+  height: 146px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: transparent;
+  font-size: 58px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* VISIT SECTION START */
+.landing-page .third-part {
+  position: absolute;
+  top: 1653px;
+  left: 0;
+  width: 100%;
+  height: 383px;
+  background-color: #ee8a10;
+  overflow: visible;
+}
+
+.landing-page .footer {
+  position: absolute;
+  top: 340px;
+  left: 0;
+  width: 100%;
+  height: 86px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+
+.landing-page .p {
+  width: auto;
+  max-width: 90%;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+}
+
+.landing-page .community-frame {
+  position: absolute;
+  top: 82px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 402px;
+  height: 220px;
+  background-color: #030202;
+  border-radius: 25px;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.landing-page .rectangle {
+  position: absolute;
+  top: 17px;
+  left: 172px;
+  width: 57px;
+  height: 57px;
+  background-color: #ff7411;
+  border-radius: 10px;
+}
+
+.landing-page .community {
+  position: absolute;
+  top: 24px;
+  left: 179px;
+  width: 43px;
+  height: 43px;
+  object-fit: cover;
+}
+
+.landing-page .text-wrapper-2 {
+  position: absolute;
+  top: 96px;
+  left: 45px;
+  width: 311px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.landing-page .text-wrapper-3 {
+  position: absolute;
+  top: 123px;
+  left: 27px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.landing-page .div-wrapper {
+  position: absolute;
+  top: 163px;
+  left: 150px;
+  width: 101px;
+  height: 27px;
+  display: flex;
+  background-color: #ff7411;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.landing-page .Visit{
+  margin-top: 6px;
+  width: 45px;
+  height: 16px;
+  margin-left: 28px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #030202;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.landing-page .tomshardware-frame {
+  position: absolute;
+  top: 82px;
+  left: 50%;
+  transform: translateX(calc(50% + 118px));
+  width: 402px;
+  height: 220px;
+  background-color: #030202;
+  border-radius: 25px;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.landing-page .hammer {
+  position: absolute;
+  top: 26px;
+  left: 181px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.landing-page .text-wrapper-5 {
+  position: absolute;
+  top: 96px;
+  left: 97px;
+  width: 207px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.landing-page .text-wrapper-6 {
+  position: absolute;
+  top: 123px;
+  left: 45px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+} 
+
+.landing-page .pcpartpicker-frame {
+  position: absolute;
+  top: 82px;
+  left: 50%;
+  transform: translateX(calc(-150% - 118px));
+  width: 402px;
+  height: 220px;
+  background-color: #030202;
+  border-radius: 25px;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.landing-page .book {
+  position: absolute;
+  top: 26px;
+  left: 181px;
+  width: 39px;
+  height: 39px;
+  object-fit: cover;
+}
+
+.landing-page .text-wrapper-7 {
+  position: absolute;
+  top: 123px;
+  left: 28px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* THIRD PART END */
+
+.landing-page .header-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 126px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background-color: #000000;
+  overflow-x: hidden;
+  opacity: 0.45;
+  z-index: 1000;
+}
+
+.landing-page .header-bar::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.landing-page .IMJ-CORE {
+  margin-left: 32px;
+  width: auto;
+  height: 76px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #be6e00;
+  font-size: 96px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.landing-page .Motto {
+  margin-left: 32px;
+  width: auto;
+  max-width: calc(100% - 64px);
+  height: 21px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #d45902;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.landing-page .about-us {
+  position: fixed;
+  top: 37px;
+  right: 24px;
+  width: 154px;
+  height: 52px;
+  display: flex;
+  background-color: #ee8a10;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.landing-page .about-us::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.landing-page .About-Us {
+  margin-top: 18px;
+  width: 94px;
+  height: 16px;
+  margin-left: 30px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #030202;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.landing-page .tier-chart {
+  position: fixed;
+  top: 37px;
+  right: 204px;
+  width: 154px;
+  height: 52px;
+  display: flex;
+  background-color: #ee8a10;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.landing-page .Tier-Chart{
+  margin-top: 18px;
+  width: 108px;
+  height: 16px;
+  margin-left: 23px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #030202;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.landing-page .home {
+  all: unset;
+  box-sizing: border-box;
+  position: fixed;
+  top: 37px;
+  right: 564px;
+  background-color: #ee8a10;
+  width: 154px;
+  height: 52px;
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.landing-page .Home {
+  margin-top: 18px;
+  width: 49px;
+  height: 16px;
+  margin-left: 52px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #030202;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.landing-page .components {
+  position: fixed;
+  top: 37px;
+  right: 384px;
+  width: 154px;
+  height: 52px;
+  display: flex;
+  background-color: #ee8a10;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.landing-page .components::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.landing-page .Components {
+  margin-top: 18px;
+  width: 123px;
+  height: 16px;
+  margin-left: 15px;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #030202;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.home:hover,
+.components:hover,
+.tier-chart:hover,
+.about-us:hover {
+  transform: scale(1.15);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.div-wrapper {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.div-wrapper:hover {
+  transform: scale(1.45);
+}
+
+.view-components-wrapper:hover {
+  transform: translateX(107px) scale(1.15);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+
