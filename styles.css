@@ -419,13 +419,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 126px;
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 7px;
   background-color: #000000;
   overflow-x: hidden;
-  opacity: 0.45;
+  opacity: 1;
   z-index: 1000;
 }
 
@@ -461,16 +461,12 @@
 }
 
 .landing-page .about-us {
-  position: fixed;
-  top: 37px;
-  right: 24px;
   width: 154px;
   height: 52px;
   display: flex;
   background-color: #ee8a10;
   border-radius: 5px;
   overflow: hidden;
-  z-index: 1001;
 }
 
 .landing-page .about-us::-webkit-scrollbar {
@@ -493,16 +489,12 @@
 }
 
 .landing-page .tier-chart {
-  position: fixed;
-  top: 37px;
-  right: 204px;
   width: 154px;
   height: 52px;
   display: flex;
   background-color: #ee8a10;
   border-radius: 5px;
   overflow: hidden;
-  z-index: 1001;
 }
 
 .landing-page .Tier-Chart{
@@ -520,18 +512,13 @@
 }
 
 .landing-page .home {
-  all: unset;
   box-sizing: border-box;
-  position: fixed;
-  top: 37px;
-  right: 564px;
   background-color: #ee8a10;
   width: 154px;
   height: 52px;
   display: flex;
   border-radius: 5px;
   overflow: hidden;
-  z-index: 1001;
   cursor: pointer;
 }
 
@@ -550,16 +537,12 @@
 }
 
 .landing-page .components {
-  position: fixed;
-  top: 37px;
-  right: 384px;
   width: 154px;
   height: 52px;
   display: flex;
   background-color: #ee8a10;
   border-radius: 5px;
   overflow: hidden;
-  z-index: 1001;
 }
 
 .landing-page .components::-webkit-scrollbar {
@@ -606,3 +589,186 @@
 }
 
 
+
+/* ============================================================
+   HEADER RESTRUCTURE — row layout, logo left, nav right
+   ============================================================ */
+.landing-page .header-bar,
+.about-us .header-bar,
+.components .header-bar,
+.tier-chart .header-bar,
+.DETAILS .header-bar {
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 24px 0 32px !important;
+  overflow: visible !important;
+  gap: 0 !important;
+  box-sizing: border-box !important;
+  opacity: 1 !important;
+}
+
+.header-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.landing-page .IMJ-CORE,
+.about-us .IMJ-CORE,
+.components .IMJ-CORE,
+.tier-chart .IMJ-CORE,
+.DETAILS .IMJ-CORE {
+  position: static !important;
+  margin-left: 0 !important;
+  font-size: 72px !important;
+  line-height: 1 !important;
+  height: auto !important;
+}
+
+.landing-page .Motto,
+.about-us .Motto,
+.components .Motto,
+.tier-chart .Motto,
+.DETAILS .Motto {
+  position: static !important;
+  margin-left: 0 !important;
+  font-size: 13px !important;
+  height: auto !important;
+  max-width: 100% !important;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.header-nav .home,
+.header-nav .components,
+.header-nav .components-button,
+.header-nav .tier-chart,
+.header-nav .tier-chart-button,
+.header-nav .about-us,
+.header-nav .about-us-button {
+  position: static !important;
+  top: auto !important; right: auto !important; left: auto !important;
+  width: 130px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0;
+  z-index: auto !important;
+}
+
+.header-nav .Home,
+.header-nav .Components,
+.header-nav .Tier-Chart,
+.header-nav .About-Us {
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+@media screen and (max-width: 1194px) {
+  .header-nav { display: none !important; }
+}
+
+/* ============================================================
+   HEADER RESTRUCTURE — row layout, logo left, nav right
+   ============================================================ */
+.landing-page .header-bar,
+.about-us .header-bar,
+.components .header-bar,
+.tier-chart .header-bar,
+.DETAILS .header-bar {
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: clamp(10px,1.5vw,20px) 24px clamp(10px,1.5vw,20px) 32px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  gap: 0 !important;
+  box-sizing: border-box !important;
+  opacity: 1 !important;
+}
+
+.header-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.landing-page .IMJ-CORE,
+.about-us .IMJ-CORE,
+.components .IMJ-CORE,
+.tier-chart .IMJ-CORE,
+.DETAILS .IMJ-CORE {
+  position: static !important;
+  margin-left: 0 !important;
+  font-size: clamp(40px, 5.5vw, 72px) !important;
+  line-height: 1 !important;
+  height: auto !important;
+  white-space: nowrap;
+}
+
+.landing-page .Motto,
+.about-us .Motto,
+.components .Motto,
+.tier-chart .Motto,
+.DETAILS .Motto {
+  position: static !important;
+  margin-left: 0 !important;
+  font-size: clamp(9px, 1.1vw, 16px) !important;
+  height: auto !important;
+  max-width: 100% !important;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.header-nav .home,
+.header-nav .components,
+.header-nav .components-button,
+.header-nav .tier-chart,
+.header-nav .tier-chart-button,
+.header-nav .about-us,
+.header-nav .about-us-button {
+  position: static !important;
+  top: auto !important; right: auto !important; left: auto !important;
+  width: clamp(90px, 9vw, 130px) !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0;
+  z-index: auto !important;
+}
+
+.header-nav .Home,
+.header-nav .Components,
+.header-nav .Tier-Chart,
+.header-nav .About-Us {
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+@media screen and (max-width: 1194px) {
+  .header-nav { display: none !important; }
+}

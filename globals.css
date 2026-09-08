@@ -24,3 +24,187 @@ a {
 }
 
 
+/* ============================================================
+   HAMBURGER NAV  –  globals.css
+   Breakpoint: ≤1194px
+   ============================================================ */
+
+.menu-toggle { display: none; }
+
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 20px;
+  height: 126px;
+  width: 44px;
+  z-index: 1100;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #ee8a10;
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+.menu-toggle:checked ~ .hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.menu-toggle:checked ~ .hamburger span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
+.mobile-nav { }
+.mobile-nav::before { content: none; }
+
+@media screen and (max-width: 1194px) {
+
+  .hamburger { display: flex; }
+
+  .mobile-nav {
+    position: fixed;
+    top: 0; right: 0;
+    width: 220px; height: 100vh;
+    background-color: #111111;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 6px; padding: 20px 0;
+    transform: translateX(110%);
+    transition: transform 0.3s ease;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.7);
+  }
+
+  .menu-toggle:checked ~ .mobile-nav { transform: translateX(0); }
+
+  .menu-toggle:checked ~ .mobile-nav::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: -1;
+  }
+
+  .mobile-nav a { display: block; width: 100%; text-decoration: none; }
+
+  .mobile-nav .home,
+  .mobile-nav .components,
+  .mobile-nav .components-button,
+  .mobile-nav .tier-chart,
+  .mobile-nav .tier-chart-button,
+  .mobile-nav .about-us,
+  .mobile-nav .about-us-button {
+    position: relative !important;
+    top: auto !important; right: auto !important; left: auto !important;
+    width: 100% !important; height: 52px !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding-left: 24px !important;
+    background-color: #1a1a1a !important;
+    border-left: 4px solid #ee8a10;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+  }
+
+  .mobile-nav .home:hover,
+  .mobile-nav .components:hover,
+  .mobile-nav .components-button:hover,
+  .mobile-nav .tier-chart:hover,
+  .mobile-nav .tier-chart-button:hover,
+  .mobile-nav .about-us:hover,
+  .mobile-nav .about-us-button:hover {
+    background-color: #2a2a2a !important;
+    transform: none !important;
+  }
+
+  .mobile-nav .Home,
+  .mobile-nav .Components,
+  .mobile-nav .Tier-Chart,
+  .mobile-nav .About-Us {
+    margin: 0 !important;
+    width: auto !important; height: auto !important;
+    font-size: 15px !important;
+    color: #ffffff !important;
+    white-space: nowrap;
+  }
+}
+
+/* ============================================================
+   LOGO / HEADER POLISH
+   ============================================================ */
+
+/* Tighten left padding so logo sits closer to the edge */
+.landing-page .header-bar,
+.about-us .header-bar,
+.components .header-bar,
+.tier-chart .header-bar,
+.DETAILS .header-bar {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+/* Hamburger — sits as a flex child INSIDE the header-bar.
+   No fixed positioning; just flows at the right end of the row. */
+.hamburger {
+  display: none;
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  box-sizing: border-box;
+  z-index: auto !important;
+}
+
+@media screen and (max-width: 1194px) {
+  .hamburger { display: flex !important; }
+}
+
+/* Hide motto on small screens */
+@media screen and (max-width: 600px) {
+  .landing-page .Motto,
+  .about-us .Motto,
+  .components .Motto,
+  .tier-chart .Motto,
+  .DETAILS .Motto {
+    display: none !important;
+  }
+}
+
+/* Mobile nav drawer still needs fixed positioning */
+@media screen and (max-width: 1194px) {
+  .mobile-nav {
+    position: fixed !important;
+    top: 0; right: 0;
+    width: 220px; height: 100vh;
+    background-color: #111111;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 6px; padding: 20px 0;
+    transform: translateX(110%);
+    transition: transform 0.3s ease;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.7);
+  }
+  .menu-toggle:checked ~ .mobile-nav { transform: translateX(0) !important; }
+}

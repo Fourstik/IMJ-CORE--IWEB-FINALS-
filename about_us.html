@@ -9,20 +9,18 @@
   </head>
   <body>
 
-      <input type="checkbox" id="menu-toggle" hidden>
-      <div class="mobile-menu-bg"></div>
-
     <div class="about-us">
 
       <img class="AI-generated-orange" src="assets/AI Generated Orange Desktop.png" />
 
       <!-- HEADER BAR -->
-      <div class="header-bar">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+<div class="header-bar">
+        <div class="header-logo">
         <div class="IMJ-CORE">IMJ-CORE</div>
         <p class="Motto">Your Roadmap to Computer Hardware Learning</p>
-      </div>
-
-      <!-- NAV BUTTONS -->
+        </div>
+        <div class="header-nav">
       <a href="index.html" class="home-link">
         <div class="home">
           <div class="Home">Home</div>
@@ -46,6 +44,43 @@
           <div class="About-Us">About Us</div>
         </div>
       </a>
+        </div>
+      
+        <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <nav class="mobile-nav">
+      <a href="index.html" class="home-link">
+        <div class="home">
+          <div class="Home">Home</div>
+        </div>
+      </a>
+
+      <a href="components.html" class="components-link">
+        <div class="components-button">
+          <div class="Components">Components</div>
+        </div>
+      </a>
+
+      <a href="tier_chart.html" class="tier-chart-link">
+        <div class="tier-chart-button">
+          <div class="Tier-Chart">Tier Chart</div>
+        </div>
+      </a>
+
+      <a href="about_us.html" class="about-us-link">
+        <div class="about-us-button">
+          <div class="About-Us">About Us</div>
+        </div>
+      </a>
+      </nav>
+
+
+      <!-- NAV BUTTONS -->
+
 
       <!-- ABOUT CONTENT -->
       <div class="about-content">
