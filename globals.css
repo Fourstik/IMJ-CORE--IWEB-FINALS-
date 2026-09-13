@@ -141,10 +141,8 @@ a {
 }
 
 /* ============================================================
-   LOGO / HEADER POLISH
+   LOGO / HEADER POLISH (all pages)
    ============================================================ */
-
-/* Tighten left padding so logo sits closer to the edge */
 .landing-page .header-bar,
 .about-us .header-bar,
 .components .header-bar,
@@ -152,10 +150,45 @@ a {
 .DETAILS .header-bar {
   padding-left: 16px !important;
   padding-right: 16px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding-top: clamp(8px, 1.5vw, 18px) !important;
+  padding-bottom: clamp(8px, 1.5vw, 18px) !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+  opacity: 1 !important;
 }
 
-/* Hamburger — sits as a flex child INSIDE the header-bar.
-   No fixed positioning; just flows at the right end of the row. */
+/* Logo scales fluidly across all pages */
+.landing-page .IMJ-CORE,
+.about-us .IMJ-CORE,
+.components .IMJ-CORE,
+.tier-chart .IMJ-CORE,
+.DETAILS .IMJ-CORE {
+  font-size: clamp(28px, 6vw, 96px) !important;
+  line-height: 1 !important;
+  height: auto !important;
+  position: static !important;
+  margin-left: 0 !important;
+  white-space: nowrap;
+}
+
+.landing-page .Motto,
+.about-us .Motto,
+.components .Motto,
+.tier-chart .Motto,
+.DETAILS .Motto {
+  font-size: clamp(9px, 1.2vw, 16px) !important;
+  height: auto !important;
+  position: static !important;
+  margin-left: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Hamburger — relative inside header flex row */
 .hamburger {
   display: none;
   position: relative !important;
@@ -179,7 +212,7 @@ a {
 }
 
 /* Hide motto on small screens */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
   .landing-page .Motto,
   .about-us .Motto,
   .components .Motto,
@@ -187,24 +220,4 @@ a {
   .DETAILS .Motto {
     display: none !important;
   }
-}
-
-/* Mobile nav drawer still needs fixed positioning */
-@media screen and (max-width: 1194px) {
-  .mobile-nav {
-    position: fixed !important;
-    top: 0; right: 0;
-    width: 220px; height: 100vh;
-    background-color: #111111;
-    z-index: 1050;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    gap: 6px; padding: 20px 0;
-    transform: translateX(110%);
-    transition: transform 0.3s ease;
-    box-shadow: -4px 0 24px rgba(0,0,0,0.7);
-  }
-  .menu-toggle:checked ~ .mobile-nav { transform: translateX(0) !important; }
 }
