@@ -45,7 +45,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 126px;
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -1204,94 +1204,209 @@ body {
 }
 
 /* ============================================================
-   HEADER RESTRUCTURE — row layout, logo left, nav right
+   RESPONSIVE HEADER
    ============================================================ */
-.landing-page .header-bar,
-.about-us .header-bar,
-.components .header-bar,
-.tier-chart .header-bar,
-.DETAILS .header-bar {
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  padding: clamp(10px,1.5vw,20px) 24px clamp(10px,1.5vw,20px) 32px !important;
-  height: auto !important;
-  min-height: 0 !important;
-  overflow: visible !important;
-  gap: 0 !important;
-  box-sizing: border-box !important;
-  opacity: 1 !important;
+.components .IMJ-CORE {
+  font-size: clamp(28px, 6vw, 72px) !important;
+  line-height: 1 !important; height: auto !important; margin-left: 0 !important;
+}
+.components .Motto {
+  font-size: clamp(9px, 1.2vw, 13px) !important;
+  height: auto !important; margin-left: 0 !important; max-width: 100% !important;
+}
+.components .header-bar {
+  height: auto !important; min-height: 0 !important;
+  padding: clamp(10px, 2vw, 20px) 16px !important;
+  overflow: visible !important; box-sizing: border-box !important;
+}
+@media screen and (max-width: 500px) {
+  .components .Motto { display: none !important; }
 }
 
-.header-logo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.landing-page .IMJ-CORE,
-.about-us .IMJ-CORE,
-.components .IMJ-CORE,
-.tier-chart .IMJ-CORE,
-.DETAILS .IMJ-CORE {
-  position: static !important;
-  margin-left: 0 !important;
-  font-size: clamp(40px, 5.5vw, 72px) !important;
-  line-height: 1 !important;
-  height: auto !important;
-  white-space: nowrap;
-}
-
-.landing-page .Motto,
-.about-us .Motto,
-.components .Motto,
-.tier-chart .Motto,
-.DETAILS .Motto {
-  position: static !important;
-  margin-left: 0 !important;
-  font-size: clamp(9px, 1.1vw, 16px) !important;
-  height: auto !important;
-  max-width: 100% !important;
-}
-
-.header-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 16px;
-  flex-shrink: 0;
-}
-
-.header-nav .home,
-.header-nav .components,
-.header-nav .components-button,
-.header-nav .tier-chart,
-.header-nav .tier-chart-button,
-.header-nav .about-us,
-.header-nav .about-us-button {
-  position: static !important;
-  top: auto !important; right: auto !important; left: auto !important;
-  width: clamp(90px, 9vw, 130px) !important;
-  height: 44px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0;
-  z-index: auto !important;
-}
-
-.header-nav .Home,
-.header-nav .Components,
-.header-nav .Tier-Chart,
-.header-nav .About-Us {
-  margin: 0 !important;
-  width: auto !important;
-  height: auto !important;
-  margin-left: 0 !important;
-  margin-top: 0 !important;
-}
-
+/* ============================================================
+   MOBILE LAYOUT ≤1194px
+   ============================================================ */
 @media screen and (max-width: 1194px) {
-  .header-nav { display: none !important; }
+
+  .components { min-height: auto !important; }
+
+  .components .AI-generated-orange {
+    height: clamp(180px, 45vw, 500px) !important;
+  }
+
+  .components .main-page-black-part {
+    position: relative !important; top: auto !important;
+    min-height: auto !important;
+    padding: 20px 16px 40px !important; overflow: visible !important;
+  }
+
+  .components .learn-about-every {
+    width: 90% !important;
+    font-size: clamp(13px, 3.5vw, 20px) !important;
+    margin: 20px auto !important; color: #ffffff !important;
+  }
+
+  /* Orange frame: 2-column grid */
+  .components .Orange-Frame {
+    position: relative !important;
+    width: calc(100% - 32px) !important;
+    height: auto !important;
+    border-radius: 20px !important;
+    margin: 0 auto 30px !important;
+    padding: 16px 12px 20px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    align-items: start !important;
+  }
+
+  /* Exact grid placement by class (more reliable than nth-child) */
+
+  /* Heading: row 1, spans both columns */
+  .components .a-computer-needs {
+    grid-column: 1 / -1 !important; grid-row: 1 !important;
+    position: relative !important; top: auto !important; left: auto !important;
+    width: 100% !important; font-size: clamp(14px, 3.8vw, 32px) !important;
+    text-align: center !important; margin: 0 !important; padding: 8px 0 !important;
+  }
+
+  /* Images and their matching labels placed in the SAME cell */
+  /* Row 2: storage + STORAGE label */
+  .components .storage      { grid-column: 1 !important; grid-row: 2 !important; z-index: 1; }
+  .components .text-wrapper-11 { grid-column: 1 !important; grid-row: 2 !important; z-index: 2; }
+
+  /* Row 2 col 2: PSU + PSU label */
+  .components .PSU          { grid-column: 2 !important; grid-row: 2 !important; z-index: 1; }
+  .components .text-wrapper-9  { grid-column: 2 !important; grid-row: 2 !important; z-index: 2; }
+
+  /* Row 3: GPU + GPU label */
+  .components .gpu          { grid-column: 1 !important; grid-row: 3 !important; z-index: 1; }
+  .components .text-wrapper-10 { grid-column: 1 !important; grid-row: 3 !important; z-index: 2; }
+
+  /* Row 3 col 2: FAN + COOLING label */
+  .components .FAN          { grid-column: 2 !important; grid-row: 3 !important; z-index: 1; }
+  .components .COOLING-SYSTEM  { grid-column: 2 !important; grid-row: 3 !important; z-index: 2; }
+
+  /* Row 4: RAM + RAM label */
+  .components .RAM          { grid-column: 1 !important; grid-row: 4 !important; z-index: 1; }
+  .components .text-wrapper-8  { grid-column: 1 !important; grid-row: 4 !important; z-index: 2; }
+
+  /* Row 4 col 2: MOTHERBOARD + Motherboard label */
+  .components .MOTHERBOARD  { grid-column: 2 !important; grid-row: 4 !important; z-index: 1; }
+  .components .text-wrapper-12 { grid-column: 2 !important; grid-row: 4 !important; z-index: 2; }
+
+  /* Row 5: CPU + CPU label */
+  .components .CPU          { grid-column: 1 !important; grid-row: 5 !important; z-index: 1; }
+  .components .text-wrapper-7  { grid-column: 1 !important; grid-row: 5 !important; z-index: 2; }
+
+  /* Row 5 col 2: CASE + Case label */
+  .components .CASE         { grid-column: 2 !important; grid-row: 5 !important; z-index: 1; }
+  .components .text-wrapper-13 { grid-column: 2 !important; grid-row: 5 !important; z-index: 2; }
+
+  /* Hide decorative frame */
+  .components .frame-wrapper { display: none !important; }
+
+  /* All images: fill their cell */
+  .components .CPU,
+  .components .MOTHERBOARD,
+  .components .RAM,
+  .components .storage,
+  .components .PSU,
+  .components .gpu,
+  .components .FAN,
+  .components .CASE {
+    position: relative !important; top: auto !important; left: auto !important;
+    width: 100% !important; height: clamp(100px, 28vw, 200px) !important;
+    border-radius: 10px !important; object-fit: cover !important; display: block !important;
+    align-self: stretch !important;
+  }
+
+  /* All labels: overlay centred on the image */
+  .components .text-wrapper-7,
+  .components .text-wrapper-8,
+  .components .text-wrapper-9,
+  .components .text-wrapper-10,
+  .components .text-wrapper-11,
+  .components .text-wrapper-12,
+  .components .text-wrapper-13,
+  .components .COOLING-SYSTEM {
+    position: relative !important; top: auto !important; left: auto !important;
+    width: 100% !important;
+    align-self: center !important;
+    justify-self: center !important;
+    font-size: clamp(13px, 3.5vw, 28px) !important;
+    text-align: center !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7) !important;
+    pointer-events: none;
+    margin: 0 !important;
+    /* Negative margin to centre label over the image */
+    margin-top: calc(-1 * clamp(100px, 28vw, 200px)) !important;
+    height: clamp(100px, 28vw, 200px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Third part */
+  .components .third-part {
+    position: relative !important; top: auto !important;
+    width: 100% !important; height: auto !important;
+    display: flex !important; flex-direction: column !important;
+    align-items: center !important; gap: 20px !important; padding: 24px 0 0 !important;
+  }
+
+  .components .community-frame,
+  .components .tomshardware-frame,
+  .components .pcpartpicker-frame {
+    position: relative !important; top: auto !important; left: auto !important;
+    transform: none !important; width: calc(100% - 32px) !important;
+    max-width: 360px !important; height: auto !important; overflow: visible !important;
+    display: flex !important; flex-direction: column !important;
+    align-items: center !important; padding: 20px 16px !important;
+    gap: 8px !important; box-sizing: border-box !important;
+  }
+  .components .rectangle {
+    position: relative !important; top: auto !important; left: auto !important; flex-shrink: 0;
+  }
+  .components .community, .components .hammer, .components .book {
+    position: relative !important; top: auto !important; left: auto !important;
+    margin-top: -50px !important; flex-shrink: 0; z-index: 1;
+  }
+  .components .box-label {
+    position: relative !important; top: auto !important; left: auto !important;
+    width: 100% !important; text-align: center !important;
+  }
+  .components .buildapc-desc,
+  .components .tomshardware-desc,
+  .components .pcpartpicker-desc {
+    position: relative !important; top: auto !important; left: auto !important;
+    width: 100% !important; text-align: center !important; white-space: normal !important;
+  }
+  .components .div-wrapper {
+    position: relative !important; top: auto !important; left: auto !important;
+    margin-top: auto !important; align-self: center !important;
+  }
+  .components .footer {
+    position: relative !important; top: auto !important; left: auto !important;
+    width: 100% !important; height: auto !important; padding: 16px !important;
+    flex-shrink: 0; box-sizing: border-box !important; align-self: stretch !important;
+  }
+  .components .p { white-space: normal !important; text-align: center !important; }
+}
+
+/* Tablet: resource cards in a row */
+@media screen and (min-width: 600px) and (max-width: 1194px) {
+  .components .third-part {
+    flex-direction: row !important; flex-wrap: wrap !important;
+    justify-content: center !important; padding: 24px 12px 0 !important;
+    gap: 12px !important; align-items: stretch !important;
+  }
+  .components .community-frame,
+  .components .tomshardware-frame,
+  .components .pcpartpicker-frame {
+    flex: 1 1 0 !important; max-width: 280px !important; width: auto !important;
+  }
 }
