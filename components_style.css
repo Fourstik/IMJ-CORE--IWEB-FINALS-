@@ -1519,3 +1519,99 @@ body {
     text-align: center !important;
   }
 }
+
+/* ============================================================
+   DESKTOP — three resource cards side by side (exact landing page)
+   ============================================================ */
+@media screen and (min-width: 769px) {
+
+  .components .third-part {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: clamp(8px, 2vw, 24px) !important;
+    padding: 82px clamp(16px, 4vw, 40px) 0 !important;
+    box-sizing: border-box !important;
+    height: 430px !important;
+    overflow: visible !important;
+    margin-top: 100px !important;
+  }
+
+  .components .community-frame,
+  .components .tomshardware-frame,
+  .components .pcpartpicker-frame {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-width: 402px !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 220px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 20px 16px !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* All inner elements: relative, centered */
+  .components .community-frame .rectangle,
+  .components .tomshardware-frame .rectangle,
+  .components .pcpartpicker-frame .rectangle {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    flex-shrink: 0;
+  }
+
+  .components .community-frame .community,
+  .components .tomshardware-frame .hammer,
+  .components .pcpartpicker-frame .book {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    margin-top: -50px !important;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .components .box-label,
+  .components .tomshardware-label {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .components .buildapc-desc,
+  .components .tomshardware-desc,
+  .components .pcpartpicker-desc {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    width: 100% !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  .components .community-frame .div-wrapper,
+  .components .tomshardware-frame .div-wrapper,
+  .components .pcpartpicker-frame .div-wrapper {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    align-self: center !important;
+    margin-top: auto !important;
+  }
+
+  .components .footer {
+    position: absolute !important;
+    top: 340px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 86px !important;
+    margin: 0 !important;
+  }
+}
