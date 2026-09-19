@@ -332,12 +332,87 @@ a { text-decoration: none; }
 }
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE — tablet
+   ============================================================ */
+@media (max-width: 900px) {
+  .resource-card { width: 280px; }
+}
+
+/* ============================================================
+   RESPONSIVE — mobile
    ============================================================ */
 @media (max-width: 760px) {
-  .hero { height: 300px; margin-top: 90px; }
-  .tier-table-wrap { padding: 12px; border-radius: 14px; }
+  /* Hero */
+  .hero { height: 280px; margin-top: 80px; }
+  .hero-content { padding: 20px 24px; }
+
+  /* Main section */
+  .main-section { padding: 40px 4% 60px; }
+
+  /* Table wrapper — no overflow, no min-width */
+  .tier-table-wrap {
+    padding: 12px 10px;
+    border-radius: 14px;
+  }
+
+  /* Hide the desktop header row */
+  .tier-table thead { display: none; }
+
+  /* Each row becomes its own card */
+  .tier-table tbody tr {
+    display: block;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,116,17,0.2);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    padding: 14px 16px 10px;
+  }
+  .tier-table tbody tr:last-child { margin-bottom: 0; }
+  .tier-table tbody tr:hover { background: rgba(255,255,255,0.05); }
+
+  /* Each cell becomes a label–value row */
+  .tier-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: right;
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: #fff;
+  }
+  .tier-table tbody td:last-child { border-bottom: none; }
+
+  /* Component name becomes the card heading */
+  .tier-table tbody td:first-child {
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    color: #ff7411;
+    border-bottom: 1px solid rgba(255,116,17,0.3);
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+
+  /* Inject tier label from data-label attribute */
+  .tier-table tbody td:not(:first-child)::before {
+    content: attr(data-label);
+    color: rgba(255,116,17,0.8);
+    font-size: 11px;
+    text-align: left;
+    flex-shrink: 0;
+    margin-right: 8px;
+    padding-top: 2px;
+  }
+
+  /* Guide cards */
   .guide-cards { flex-direction: column; align-items: center; }
+  .guide-card { min-width: unset; max-width: 100%; width: 100%; }
+
+  /* Resources */
+  .resources-section { padding: 36px 5%; }
   .resources-cards { flex-direction: column; align-items: center; }
-  .resource-card { width: 100%; max-width: 400px; }
+  .resource-card { width: 100%; max-width: 420px; }
 }
