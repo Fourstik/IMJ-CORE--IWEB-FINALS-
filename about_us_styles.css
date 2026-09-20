@@ -48,14 +48,19 @@ a { text-decoration: none; color: inherit; }
 .about-us .header-bar {
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 126px;
-  display: flex; flex-direction: column; gap: 7px;
-  background-color: #000000; overflow-x: hidden;
-  opacity: 1; z-index: 1000;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  z-index: 1000;
+  overflow: visible;
+  box-sizing: border-box;
+  padding: clamp(10px, 2vw, 20px) 16px;
+  height: auto;
+  min-height: 0;
 }
-.about-us .header-bar::-webkit-scrollbar { width: 0; display: none; }
-
-/* ── LOGO ────────────────────────────────────────────────────── */
 
 .header-logo {
   display: flex;
@@ -65,18 +70,30 @@ a { text-decoration: none; color: inherit; }
 }
 
 .about-us .IMJ-CORE {
-  margin-left: 32px; width: auto; height: 76px;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
-  color: #be6e00; font-size: 96px;
-  letter-spacing: 0; line-height: normal; white-space: nowrap;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #be6e00;
+  font-size: clamp(28px, 6vw, 72px);
+  line-height: 1;
+  height: auto;
+  position: static;
+  margin-left: 0;
+  white-space: nowrap;
 }
 
 .about-us .Motto {
-  margin-left: 32px; width: auto;
-  max-width: calc(100% - 64px); height: 21px;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
-  color: #d45902; font-size: 16px;
-  letter-spacing: 0; line-height: normal;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #d45902;
+  font-size: clamp(9px, 1.2vw, 13px);
+  height: auto;
+  position: static;
+  margin-left: 0;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .about-us .Motto { display: none; }
 }
 
 /* ── DESKTOP NAV ─────────────────────────────────────────────── */
@@ -89,210 +106,45 @@ a { text-decoration: none; color: inherit; }
   flex-shrink: 0;
 }
 
-.about-us .home,
-.about-us .components-button,
-.about-us .tier-chart-button,
-.about-us .about-us-button {
-  width: 154px; height: 52px;
-  display: flex; background-color: #ee8a10;
-  border-radius: 5px; overflow: hidden;
-  cursor: pointer;
-}
-
-.about-us .home:hover,
-.about-us .components-button:hover,
-.about-us .tier-chart-button:hover,
-.about-us .about-us-button:hover {
-  transform: scale(1.15); transition: 0.2s ease; cursor: pointer;
-}
-
-.about-us .Home,
-.about-us .Components,
-.about-us .Tier-Chart,
-.about-us .About-Us {
-  margin-top: 18px;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
-  color: #030202; font-size: 16px;
-  letter-spacing: 0; line-height: normal; white-space: nowrap;
-}
-
-/* ── HEADER RESTRUCTURE ──────────────────────────────────────── */
-
-.about-us .header-bar {
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  padding: 0 24px 0 32px !important;
-  overflow: visible !important;
-  gap: 0 !important;
-  box-sizing: border-box !important;
-  opacity: 1 !important;
-}
-
-.about-us .IMJ-CORE {
-  position: static !important;
-  margin-left: 0 !important;
-  font-size: 72px !important;
-  line-height: 1 !important;
-  height: auto !important;
-}
-
-.about-us .Motto {
-  position: static !important;
-  margin-left: 0 !important;
-  font-size: 13px !important;
-  height: auto !important;
-  max-width: 100% !important;
-}
-
 .header-nav .home,
 .header-nav .components-button,
 .header-nav .tier-chart-button,
 .header-nav .about-us-button {
-  position: static !important;
-  top: auto !important; right: auto !important; left: auto !important;
-  width: 130px !important; height: 48px !important;
-  display: flex !important; align-items: center !important;
-  justify-content: center !important; flex-shrink: 0; z-index: auto !important;
+  width: 130px; height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ee8a10;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.header-nav .home:hover,
+.header-nav .components-button:hover,
+.header-nav .tier-chart-button:hover,
+.header-nav .about-us-button:hover {
+  transform: scale(1.15);
+  transition: 0.2s ease;
 }
 
 .header-nav .Home,
 .header-nav .Components,
 .header-nav .Tier-Chart,
 .header-nav .About-Us {
-  margin: 0 !important;
-  width: auto !important; height: auto !important;
-  margin-left: 0 !important; margin-top: 0 !important;
+  font-family: 'NicoMoji', sans-serif;
+  font-weight: 400;
+  color: #030202;
+  font-size: 16px;
+  white-space: nowrap;
+  margin: 0;
 }
-
-/* ── RESPONSIVE HEADER ───────────────────────────────────────── */
-
-.about-us .IMJ-CORE {
-  font-size: clamp(28px, 6vw, 72px) !important;
-  line-height: 1 !important; height: auto !important; margin-left: 0 !important;
-}
-.about-us .Motto {
-  font-size: clamp(9px, 1.2vw, 13px) !important;
-  height: auto !important; margin-left: 0 !important; max-width: 100% !important;
-}
-.about-us .header-bar {
-  height: auto !important; min-height: 0 !important;
-  padding: clamp(10px, 2vw, 20px) 16px !important;
-  flex-direction: row !important; align-items: center !important;
-  justify-content: space-between !important;
-  overflow: visible !important; box-sizing: border-box !important;
-}
-
-@media screen and (max-width: 500px) {
-  .about-us .Motto { display: none !important; }
-}
-
-/* ── HAMBURGER ───────────────────────────────────────────────── */
-
-.menu-toggle {
-  display: none;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 8px;
-  flex-shrink: 0;
-}
-
-.hamburger span {
-  display: block;
-  width: 26px;
-  height: 2px;
-  background-color: #ee8a10;
-  border-radius: 2px;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-/* ── MOBILE NAV ──────────────────────────────────────────────── */
-
-.mobile-nav {
-  display: none;
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.97);
-  flex-direction: column;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease;
-}
-
-.mobile-nav .home,
-.mobile-nav .components-button,
-.mobile-nav .tier-chart-button,
-.mobile-nav .about-us-button {
-  width: 100%;
-  height: 56px;
-  border-radius: 0;
-  border-bottom: 1px solid rgba(238, 138, 16, 0.2);
-  justify-content: flex-start;
-  padding-left: 32px;
-  background-color: transparent;
-}
-
-.mobile-nav .home:hover,
-.mobile-nav .components-button:hover,
-.mobile-nav .tier-chart-button:hover,
-.mobile-nav .about-us-button:hover {
-  background-color: rgba(238, 138, 16, 0.15);
-  transform: none;
-}
-
-.mobile-nav .Home,
-.mobile-nav .Components,
-.mobile-nav .Tier-Chart,
-.mobile-nav .About-Us {
-  color: #ffffff;
-  font-size: 18px;
-}
-
-/* ── RESPONSIVE BREAKPOINTS ──────────────────────────────────── */
 
 @media screen and (max-width: 1194px) {
   .header-nav {
     display: none !important;
-    max-width: 0 !important;
-    max-height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    gap: 0 !important;
-    overflow: hidden !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
   }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .mobile-nav {
-    display: flex;
-    top: clamp(60px, 10vw, 110px);
-  }
-}
-
-/* Hamburger open state */
-.menu-toggle:checked ~ .header-bar .hamburger span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.menu-toggle:checked ~ .header-bar .hamburger span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle:checked ~ .header-bar .hamburger span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-.menu-toggle:checked ~ .mobile-nav {
-  max-height: 320px;
 }
 
 /* ============================================================
