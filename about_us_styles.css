@@ -1,7 +1,6 @@
 /* ============================================================
    about_us_styles.css
-   Header styles only. All page/content layout is handled
-   by the <style> block in about_us.html.
+   All styles for about_us.html
    ============================================================ */
 
 @font-face {
@@ -11,6 +10,21 @@
   font-style: normal;
 }
 
+:root {
+  --black:  #000000;
+  --orange: #EE8A10;
+  --amber:  #FEA314;
+  --gold:   #BE6E00;
+  --rust:   #D45902;
+  --white:  #FFFFFF;
+  --font-brand: 'NicoMoji', 'Courier New', monospace;
+  --font-body:  system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --radius-card: 20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
 body, html {
   margin: 0;
   padding: 0;
@@ -18,29 +32,28 @@ body, html {
   overflow-x: hidden;
 }
 
-/* ── HEADER BAR ──────────────────────────────────────────────── */
+body {
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ============================================================
+   HEADER BAR
+   ============================================================ */
 
 .about-us .header-bar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: #000000;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: clamp(10px, 1.5vw, 20px) 24px clamp(10px, 1.5vw, 20px) 32px;
-  box-sizing: border-box;
-  overflow: visible;
-  gap: 0;
-  opacity: 1;
+  top: 0; left: 0;
+  width: 100%; height: 126px;
+  display: flex; flex-direction: column; gap: 7px;
+  background-color: #000000; overflow-x: hidden;
+  opacity: 1; z-index: 1000;
 }
-
-.about-us .header-bar::-webkit-scrollbar {
-  display: none;
-}
+.about-us .header-bar::-webkit-scrollbar { width: 0; display: none; }
 
 /* ── LOGO ────────────────────────────────────────────────────── */
 
@@ -52,26 +65,18 @@ body, html {
 }
 
 .about-us .IMJ-CORE {
-  position: static;
-  margin-left: 0;
-  font-family: 'NicoMoji', sans-serif;
-  font-weight: 400;
-  color: #be6e00;
-  font-size: clamp(40px, 5.5vw, 72px);
-  line-height: 1;
-  height: auto;
-  white-space: nowrap;
+  margin-left: 32px; width: auto; height: 76px;
+  font-family: 'NicoMoji', sans-serif; font-weight: 400;
+  color: #be6e00; font-size: 96px;
+  letter-spacing: 0; line-height: normal; white-space: nowrap;
 }
 
 .about-us .Motto {
-  position: static;
-  margin-left: 0;
-  font-family: 'NicoMoji', sans-serif;
-  font-weight: 400;
-  color: #d45902;
-  font-size: clamp(9px, 1.1vw, 16px);
-  height: auto;
-  max-width: 100%;
+  margin-left: 32px; width: auto;
+  max-width: calc(100% - 64px); height: 21px;
+  font-family: 'NicoMoji', sans-serif; font-weight: 400;
+  color: #d45902; font-size: 16px;
+  letter-spacing: 0; line-height: normal;
 }
 
 /* ── DESKTOP NAV ─────────────────────────────────────────────── */
@@ -88,38 +93,98 @@ body, html {
 .about-us .components-button,
 .about-us .tier-chart-button,
 .about-us .about-us-button {
-  position: static;
-  width: clamp(90px, 9vw, 130px);
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ee8a10;
-  border-radius: 5px;
-  overflow: hidden;
+  width: 154px; height: 52px;
+  display: flex; background-color: #ee8a10;
+  border-radius: 5px; overflow: hidden;
   cursor: pointer;
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
 }
 
 .about-us .home:hover,
 .about-us .components-button:hover,
 .about-us .tier-chart-button:hover,
 .about-us .about-us-button:hover {
-  transform: scale(1.1);
-  background-color: #fea314;
+  transform: scale(1.15); transition: 0.2s ease; cursor: pointer;
 }
 
 .about-us .Home,
 .about-us .Components,
 .about-us .Tier-Chart,
 .about-us .About-Us {
-  margin: 0;
-  font-family: 'NicoMoji', sans-serif;
-  font-weight: 400;
-  color: #030202;
-  font-size: clamp(11px, 1.1vw, 16px);
-  white-space: nowrap;
+  margin-top: 18px;
+  font-family: 'NicoMoji', sans-serif; font-weight: 400;
+  color: #030202; font-size: 16px;
+  letter-spacing: 0; line-height: normal; white-space: nowrap;
+}
+
+/* ── HEADER RESTRUCTURE ──────────────────────────────────────── */
+
+.about-us .header-bar {
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 24px 0 32px !important;
+  overflow: visible !important;
+  gap: 0 !important;
+  box-sizing: border-box !important;
+  opacity: 1 !important;
+}
+
+.about-us .IMJ-CORE {
+  position: static !important;
+  margin-left: 0 !important;
+  font-size: 72px !important;
+  line-height: 1 !important;
+  height: auto !important;
+}
+
+.about-us .Motto {
+  position: static !important;
+  margin-left: 0 !important;
+  font-size: 13px !important;
+  height: auto !important;
+  max-width: 100% !important;
+}
+
+.header-nav .home,
+.header-nav .components-button,
+.header-nav .tier-chart-button,
+.header-nav .about-us-button {
+  position: static !important;
+  top: auto !important; right: auto !important; left: auto !important;
+  width: 130px !important; height: 48px !important;
+  display: flex !important; align-items: center !important;
+  justify-content: center !important; flex-shrink: 0; z-index: auto !important;
+}
+
+.header-nav .Home,
+.header-nav .Components,
+.header-nav .Tier-Chart,
+.header-nav .About-Us {
+  margin: 0 !important;
+  width: auto !important; height: auto !important;
+  margin-left: 0 !important; margin-top: 0 !important;
+}
+
+/* ── RESPONSIVE HEADER ───────────────────────────────────────── */
+
+.about-us .IMJ-CORE {
+  font-size: clamp(28px, 6vw, 72px) !important;
+  line-height: 1 !important; height: auto !important; margin-left: 0 !important;
+}
+.about-us .Motto {
+  font-size: clamp(9px, 1.2vw, 13px) !important;
+  height: auto !important; margin-left: 0 !important; max-width: 100% !important;
+}
+.about-us .header-bar {
+  height: auto !important; min-height: 0 !important;
+  padding: clamp(10px, 2vw, 20px) 16px !important;
+  flex-direction: row !important; align-items: center !important;
+  justify-content: space-between !important;
+  overflow: visible !important; box-sizing: border-box !important;
+}
+
+@media screen and (max-width: 500px) {
+  .about-us .Motto { display: none !important; }
 }
 
 /* ── HAMBURGER ───────────────────────────────────────────────── */
@@ -151,7 +216,6 @@ body, html {
 .mobile-nav {
   display: none;
   position: fixed;
-  top: 0; /* overridden by JS-free trick below */
   left: 0;
   right: 0;
   z-index: 999;
@@ -193,7 +257,6 @@ body, html {
 
 /* ── RESPONSIVE BREAKPOINTS ──────────────────────────────────── */
 
-/* Hide desktop nav, show hamburger below 1194px */
 @media screen and (max-width: 1194px) {
   .header-nav {
     display: none !important;
@@ -217,7 +280,7 @@ body, html {
   }
 }
 
-/* Hamburger open state — pure CSS via checkbox trick */
+/* Hamburger open state */
 .menu-toggle:checked ~ .header-bar .hamburger span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -228,8 +291,312 @@ body, html {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* The mobile-nav sits AFTER the .about-us div in the DOM,
-   so we use the general sibling combinator from .menu-toggle */
 .menu-toggle:checked ~ .mobile-nav {
   max-height: 320px;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  position: relative;
+  height: clamp(460px, 55vw, 620px);
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: clamp(52px, 7vw, 80px);
+  padding-top: clamp(50px, 6vw, 80px);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.15) 40%,
+      rgba(0,0,0,0.75) 100%),
+    url('assets/AI Generated Orange Desktop.png') center/cover no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.hero-title {
+  font-family: var(--font-brand);
+  font-size: clamp(56px, 11vw, 130px);
+  line-height: 1;
+  color: var(--white);
+}
+
+.hero-title .accent { color: var(--orange); }
+
+.hero-scroll {
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.55);
+  font-size: clamp(10px, 2.5vw, 13px);
+  font-family: var(--font-brand);
+  animation: hero-bounce 2.2s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.hero-scroll svg { width: 16px; height: 16px; }
+
+@keyframes hero-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(7px); }
+}
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+
+.about-section {
+  background: var(--black);
+  position: relative;
+}
+
+.about-section::before {
+  content: '';
+  display: block;
+  height: 70px;
+  background: var(--black);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  margin-top: -69px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 72px) clamp(20px, 5vw, 40px) clamp(48px, 7vw, 96px);
+}
+
+.qa-block {
+  margin-bottom: clamp(36px, 5.5vw, 60px);
+}
+
+.qa-heading {
+  font-family: var(--font-brand);
+  font-size: clamp(24px, 4vw, 46px);
+  line-height: 1.1;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--orange);
+  margin-bottom: 16px;
+}
+
+.qa-heading .word-accent { color: var(--orange); }
+.qa-heading .word-plain  { color: var(--white); }
+
+.qa-body {
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.8;
+  color: rgba(255,255,255,0.78);
+  max-width: 70ch;
+}
+
+.name-card {
+  background: linear-gradient(135deg, var(--amber) 0%, var(--orange) 100%);
+  border-radius: var(--radius-card);
+  padding: clamp(24px, 4vw, 48px);
+  margin-top: clamp(36px, 5.5vw, 60px);
+}
+
+.name-card .qa-heading {
+  border-bottom-color: rgba(0,0,0,0.22);
+}
+
+.name-card .qa-heading .word-accent { color: rgba(0,0,0,0.55); }
+.name-card .qa-heading .word-plain  { color: var(--black); }
+
+.name-card .qa-body {
+  color: rgba(0,0,0,0.82);
+  margin-top: 16px;
+}
+
+.name-card .qa-body strong { color: var(--black); }
+
+/* ============================================================
+   FOOTER / THIRD PART
+   ============================================================ */
+
+.au-third-part {
+  position: relative;
+  width: 100%;
+  background-color: #ee8a10;
+  overflow: visible;
+  margin-top: 100px;
+}
+
+.au-footer {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 86px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+
+.au-p {
+  width: auto; max-width: 90%;
+  font-family: var(--font-brand);
+  font-weight: 400;
+  color: #ffffff; font-size: 13px;
+  text-align: center; margin: 0; padding: 0;
+}
+
+.au-community-frame,
+.au-tomshardware-frame,
+.au-pcpartpicker-frame {
+  background-color: #030202;
+  border-radius: 25px;
+  opacity: 0.8;
+}
+
+.au-rectangle {
+  width: 57px; height: 57px;
+  background-color: #ff7411;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.au-icon {
+  width: 43px; height: 43px;
+  object-fit: cover;
+  margin-top: -50px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.au-box-label {
+  font-family: var(--font-brand);
+  font-weight: 400;
+  color: #ffffff; font-size: 16px;
+  text-align: center; width: 100%;
+}
+
+.au-desc {
+  font-family: var(--font-brand);
+  font-weight: 400;
+  color: #ffffff; font-size: 11px;
+  text-align: center;
+  white-space: normal; width: 100%;
+}
+
+.au-visit-btn {
+  width: 101px; height: 27px;
+  display: flex;
+  background-color: #ff7411;
+  border-radius: 10px; overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  cursor: pointer; align-self: center;
+}
+
+.au-visit-btn:hover { transform: scale(1.1); }
+
+.au-visit-text {
+  margin-top: 6px; width: 100%;
+  font-family: var(--font-brand);
+  font-weight: 400;
+  color: #030202; font-size: 16px;
+  text-align: center; white-space: nowrap;
+}
+
+@media screen and (min-width: 769px) {
+  .au-third-part {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: clamp(8px, 2vw, 24px);
+    padding: 82px clamp(16px, 4vw, 40px) 0;
+    box-sizing: border-box;
+    height: 430px;
+    position: relative;
+  }
+
+  .au-community-frame,
+  .au-tomshardware-frame,
+  .au-pcpartpicker-frame {
+    flex: 1 1 0;
+    min-width: 0; max-width: 402px;
+    height: auto; min-height: 220px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    align-items: center;
+    padding: 20px 16px; gap: 8px;
+    box-sizing: border-box;
+  }
+
+  .au-footer {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 86px;
+    flex: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .au-third-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 16px 0;
+    box-sizing: border-box;
+    height: auto;
+    margin-top: 40px;
+  }
+
+  .au-community-frame,
+  .au-tomshardware-frame,
+  .au-pcpartpicker-frame {
+    position: relative;
+    width: 100%; max-width: 360px;
+    height: auto; overflow: visible;
+    display: flex; flex-direction: column;
+    align-items: center;
+    padding: 20px 16px; gap: 8px;
+    box-sizing: border-box;
+  }
+
+  .au-footer {
+    position: relative;
+    width: 100%; height: auto;
+    min-height: 86px; padding: 16px;
+    box-sizing: border-box;
+    margin-top: 20px; align-self: stretch;
+  }
+}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
 }
