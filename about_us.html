@@ -6,46 +6,408 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="about_us_styles.css" />
+    <style>
+      /* ============================================================
+         NEW PAGE STYLES — hero, about section, footer
+         Header styles remain in about_us_styles.css untouched.
+         ============================================================ */
+
+      @font-face {
+        font-family: 'NicoMoji';
+        src: url('font/NicoMoji-Regular.ttf') format('truetype');
+      }
+
+      :root {
+        --black:  #000000;
+        --orange: #EE8A10;
+        --amber:  #FEA314;
+        --gold:   #BE6E00;
+        --rust:   #D45902;
+        --white:  #FFFFFF;
+        --font-brand: 'NicoMoji', 'Courier New', monospace;
+        --font-body:  system-ui, -apple-system, 'Segoe UI', sans-serif;
+        --radius-card: 20px;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--black);
+        color: var(--white);
+        overflow-x: hidden;
+      }
+
+      a { text-decoration: none; color: inherit; }
+
+      /* ── HERO ───────────────────────────────────────────────── */
+      .hero {
+        position: relative;
+        height: clamp(460px, 55vw, 620px);
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: clamp(52px, 7vw, 80px);
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(to bottom,
+            rgba(0,0,0,0.55) 0%,
+            rgba(0,0,0,0.15) 40%,
+            rgba(0,0,0,0.75) 100%),
+          url('assets/AI Generated Orange Desktop.png') center/cover no-repeat;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        text-align: center;
+        padding: 0 24px;
+      }
+
+      .hero-title {
+        font-family: var(--font-brand);
+        font-size: clamp(56px, 11vw, 130px);
+        line-height: 1;
+        color: var(--white);
+      }
+
+      .hero-title .accent { color: var(--orange); }
+
+      .hero-scroll {
+        margin-top: 28px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: rgba(255,255,255,0.55);
+        font-size: clamp(10px, 2.5vw, 13px);
+        font-family: var(--font-brand);
+        animation: hero-bounce 2.2s ease-in-out infinite;
+        white-space: nowrap;
+      }
+
+      .hero-scroll svg { width: 16px; height: 16px; }
+
+      @keyframes hero-bounce {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(7px); }
+      }
+
+      /* ── ABOUT SECTION ──────────────────────────────────────── */
+      .about-section {
+        background: var(--black);
+        position: relative;
+      }
+
+      /* Diagonal slice at top — black wedge cuts over the hero */
+      .about-section::before {
+        content: '';
+        display: block;
+        height: 70px;
+        background: var(--black);
+        clip-path: polygon(0 100%, 100% 0, 100% 100%);
+        margin-top: -69px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .about-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: clamp(32px, 5vw, 72px) clamp(20px, 5vw, 40px) clamp(48px, 7vw, 96px);
+      }
+
+      /* Q&A blocks */
+      .qa-block {
+        margin-bottom: clamp(36px, 5.5vw, 60px);
+      }
+
+      .qa-heading {
+        font-family: var(--font-brand);
+        font-size: clamp(24px, 4vw, 46px);
+        line-height: 1.1;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--orange);
+        margin-bottom: 16px;
+      }
+
+      .qa-heading .word-accent { color: var(--orange); }
+      .qa-heading .word-plain  { color: var(--white); }
+
+      .qa-body {
+        font-size: clamp(14px, 1.5vw, 16px);
+        line-height: 1.8;
+        color: rgba(255,255,255,0.78);
+        max-width: 70ch;
+      }
+
+      /* "About The Name" — orange gradient card */
+      .name-card {
+        background: linear-gradient(135deg, var(--amber) 0%, var(--orange) 100%);
+        border-radius: var(--radius-card);
+        padding: clamp(24px, 4vw, 48px);
+        margin-top: clamp(36px, 5.5vw, 60px);
+      }
+
+      .name-card .qa-heading {
+        border-bottom-color: rgba(0,0,0,0.22);
+      }
+
+      .name-card .qa-heading .word-accent { color: rgba(0,0,0,0.55); }
+      .name-card .qa-heading .word-plain  { color: var(--black); }
+
+      .name-card .qa-body {
+        color: rgba(0,0,0,0.82);
+        margin-top: 16px;
+      }
+
+      .name-card .qa-body strong { color: var(--black); }
+
+      /* ── FOOTER / THIRD-PART — mirrors components page exactly ── */
+
+      /* Orange band wrapper */
+      .au-third-part {
+        position: relative;
+        width: 100%;
+        background-color: #ee8a10;
+        overflow: visible;
+        margin-top: 100px;
+      }
+
+      /* Black copyright bar */
+      .au-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 86px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+      }
+
+      .au-p {
+        width: auto;
+        max-width: 90%;
+        font-family: var(--font-brand);
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 13px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Shared card styles */
+      .au-community-frame,
+      .au-tomshardware-frame,
+      .au-pcpartpicker-frame {
+        background-color: #030202;
+        border-radius: 25px;
+        opacity: 0.8;
+      }
+
+      .au-rectangle {
+        width: 57px;
+        height: 57px;
+        background-color: #ff7411;
+        border-radius: 10px;
+        flex-shrink: 0;
+      }
+
+      .au-icon {
+        width: 43px;
+        height: 43px;
+        object-fit: cover;
+        margin-top: -50px;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+      }
+
+      .au-box-label {
+        font-family: var(--font-brand);
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .au-desc {
+        font-family: var(--font-brand);
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 11px;
+        text-align: center;
+        white-space: normal;
+        width: 100%;
+      }
+
+      .au-visit-btn {
+        width: 101px;
+        height: 27px;
+        display: flex;
+        background-color: #ff7411;
+        border-radius: 10px;
+        overflow: hidden;
+        text-decoration: none;
+        transition: transform 0.2s ease;
+        cursor: pointer;
+        align-self: center;
+      }
+
+      .au-visit-btn:hover { transform: scale(1.1); }
+
+      .au-visit-text {
+        margin-top: 6px;
+        width: 100%;
+        font-family: var(--font-brand);
+        font-weight: 400;
+        color: #030202;
+        font-size: 16px;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      /* ── DESKTOP: three cards side by side ─────────────────── */
+      @media screen and (min-width: 769px) {
+        .au-third-part {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: center;
+          gap: clamp(8px, 2vw, 24px);
+          padding: 82px clamp(16px, 4vw, 40px) 0;
+          box-sizing: border-box;
+          height: 430px;
+          position: relative;
+        }
+
+        .au-community-frame,
+        .au-tomshardware-frame,
+        .au-pcpartpicker-frame {
+          flex: 1 1 0;
+          min-width: 0;
+          max-width: 402px;
+          height: auto;
+          min-height: 220px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px 16px;
+          gap: 8px;
+          box-sizing: border-box;
+        }
+
+        /* On desktop: pull footer out of flex flow, pin to bottom */
+        .au-footer {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 86px;
+          flex: none;
+        }
+      }
+
+      /* ── MOBILE: stacked cards ──────────────────────────────── */
+      @media screen and (max-width: 768px) {
+        .au-third-part {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          padding: 24px 16px 0;
+          box-sizing: border-box;
+          height: auto;
+          margin-top: 40px;
+        }
+
+        .au-community-frame,
+        .au-tomshardware-frame,
+        .au-pcpartpicker-frame {
+          position: relative;
+          width: 100%;
+          max-width: 360px;
+          height: auto;
+          overflow: visible;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px 16px;
+          gap: 8px;
+          box-sizing: border-box;
+        }
+
+        /* On mobile: footer flows naturally last, full width, black */
+        .au-footer {
+          position: relative;
+          width: 100%;
+          height: auto;
+          min-height: 86px;
+          padding: 16px;
+          box-sizing: border-box;
+          margin-top: 20px;
+          align-self: stretch;
+        }
+      }
+
+      /* ── SCROLL REVEAL ──────────────────────────────────────── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; }
+      }
+
+      /* ── HEADER OFFSET — hero starts below the fixed header ── */
+      /* padding-top = approximate header height so bg image starts right under it */
+      .hero { padding-top: clamp(60px, 8vw, 100px); }
+    </style>
   </head>
   <body>
 
     <div class="about-us">
 
-      <img class="AI-generated-orange" src="assets/AI Generated Orange Desktop.png" />
+      <img class="AI-generated-orange" src="assets/AI Generated Orange Desktop.png" style="display:none" />
 
-      <!-- HEADER BAR -->
+      <!-- HEADER BAR — untouched from original -->
       <input type="checkbox" id="menu-toggle" class="menu-toggle">
-<div class="header-bar">
+      <div class="header-bar">
         <div class="header-logo">
-        <div class="IMJ-CORE">IMJ-CORE</div>
-        <p class="Motto">Your Roadmap to Computer Hardware Learning</p>
+          <div class="IMJ-CORE">IMJ-CORE</div>
+          <p class="Motto">Your Roadmap to Computer Hardware Learning</p>
         </div>
         <div class="header-nav">
-      <a href="index.html" class="home-link">
-        <div class="home">
-          <div class="Home">Home</div>
+          <a href="index.html" class="home-link">
+            <div class="home"><div class="Home">Home</div></div>
+          </a>
+          <a href="components.html" class="components-link">
+            <div class="components-button"><div class="Components">Components</div></div>
+          </a>
+          <a href="tier_chart.html" class="tier-chart-link">
+            <div class="tier-chart-button"><div class="Tier-Chart">Tier Chart</div></div>
+          </a>
+          <a href="about_us.html" class="about-us-link">
+            <div class="about-us-button"><div class="About-Us">About Us</div></div>
+          </a>
         </div>
-      </a>
-
-      <a href="components.html" class="components-link">
-        <div class="components-button">
-          <div class="Components">Components</div>
-        </div>
-      </a>
-
-      <a href="tier_chart.html" class="tier-chart-link">
-        <div class="tier-chart-button">
-          <div class="Tier-Chart">Tier Chart</div>
-        </div>
-      </a>
-
-      <a href="about_us.html" class="about-us-link">
-        <div class="about-us-button">
-          <div class="About-Us">About Us</div>
-        </div>
-      </a>
-        </div>
-      
         <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
           <span></span>
           <span></span>
@@ -53,91 +415,133 @@
         </label>
       </div>
       <nav class="mobile-nav">
-      <a href="index.html" class="home-link">
-        <div class="home">
-          <div class="Home">Home</div>
-        </div>
-      </a>
-
-      <a href="components.html" class="components-link">
-        <div class="components-button">
-          <div class="Components">Components</div>
-        </div>
-      </a>
-
-      <a href="tier_chart.html" class="tier-chart-link">
-        <div class="tier-chart-button">
-          <div class="Tier-Chart">Tier Chart</div>
-        </div>
-      </a>
-
-      <a href="about_us.html" class="about-us-link">
-        <div class="about-us-button">
-          <div class="About-Us">About Us</div>
-        </div>
-      </a>
+        <a href="index.html" class="home-link">
+          <div class="home"><div class="Home">Home</div></div>
+        </a>
+        <a href="components.html" class="components-link">
+          <div class="components-button"><div class="Components">Components</div></div>
+        </a>
+        <a href="tier_chart.html" class="tier-chart-link">
+          <div class="tier-chart-button"><div class="Tier-Chart">Tier Chart</div></div>
+        </a>
+        <a href="about_us.html" class="about-us-link">
+          <div class="about-us-button"><div class="About-Us">About Us</div></div>
+        </a>
       </nav>
 
+    </div><!-- end .about-us (header wrapper) -->
 
-      <!-- NAV BUTTONS -->
+    <!-- ═══════════════════════════════════════════════════════════
+         EVERYTHING BELOW IS THE NEW REDESIGNED CONTENT
+         ═══════════════════════════════════════════════════════════ -->
 
-
-      <!-- ABOUT CONTENT -->
-      <div class="about-content">
-        <div class="frame"></div>
-        <div class="div"></div>
-        <p class="text-wrapper">
-          We are a team of learners and tech enthusiasts who believe that understanding computer hardware doesn't have to be complicated. IMJ-CORE was built to make PC knowledge simple, clear, and accessible to anyone — whether you're completely new to computers or just looking to strengthen your basics.
-        </p>
-        <p class="p">
-          We know that diving into the world of computers can feel overwhelming at first. Technical terms, endless parts, and confusing explanations often scare people away. That's why we're here: to break it all down into something anyone can follow.
-        </p>
-        <p class="text-wrapper-2">
-          At IMJ-CORE, we break down the importance of each computer component in clear and simple language. From the CPU to the power supply, we explain what each part does and why it matters, without the confusing technical jargon. Our goal is to help beginners understand the basics of hardware so they can see how every piece fits into the bigger picture of a computer.
-        </p>
-        <p class="text-wrapper-3">
-          IMJ represents the initials of our team members, arranged in a way that sounds like the word “image.” This reflects how our website uses visuals to help visitors easily understand and visualize different PC components.
-          <br />
-          Meanwhile, Core carries a deeper meaning. The CO stands for Computer, R for Reference, and E for Education. Together, they represent our mission to serve as a reliable educational reference about computers — going straight to the core of learning and understanding each component’s function and importance.
-        </p>
-        <p class="who-are-we"><span class="span">Who</span> <span class="text-wrapper-4"> Are We?</span></p>
-        <p class="why-are-we-here"><span class="span">Why </span> <span class="text-wrapper-4">Are We Here?</span></p>
-        <p class="what-do-we-do"><span class="span">What </span> <span class="text-wrapper-4">Do We Do?</span></p>
-        <p class="about-the-name"><span class="span">About </span> <span class="text-wrapper-4">The Name</span></p>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">About <span class="accent">Us</span></h1>
+        <div class="hero-scroll">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+          Scroll to learn more
+        </div>
       </div>
+    </section>
 
-      <!-- FOOTER -->
-      <div class="frame-2">
-        <footer class="footer">
-          <p class="text-wrapper-5">
-            © 2025 IMJ-CORE. Educational content for learning purposes.
+    <!-- ABOUT CONTENT -->
+    <section class="about-section">
+      <div class="about-inner">
+
+        <div class="qa-block reveal">
+          <h2 class="qa-heading">
+            <span class="word-accent">Who</span><span class="word-plain"> Are We?</span>
+          </h2>
+          <p class="qa-body">
+            We are a team of learners and tech enthusiasts who believe that understanding computer hardware doesn't have to be complicated. IMJ-CORE was built to make PC knowledge simple, clear, and accessible to anyone — whether you're completely new to computers or just looking to strengthen your basics.
           </p>
-        </footer>
+        </div>
 
-        <a href="mailto:rccincognito@gmail.com" target="_blank" rel="noopener noreferrer">
-          <div class="text-wrapper-6">rccincognito@gmail.com</div>
+        <div class="qa-block reveal">
+          <h2 class="qa-heading">
+            <span class="word-accent">Why</span><span class="word-plain"> Are We Here?</span>
+          </h2>
+          <p class="qa-body">
+            We know that diving into the world of computers can feel overwhelming at first. Technical terms, endless parts, and confusing explanations often scare people away. That's why we're here: to break it all down into something anyone can follow.
+          </p>
+        </div>
+
+        <div class="qa-block reveal">
+          <h2 class="qa-heading">
+            <span class="word-accent">What</span><span class="word-plain"> Do We Do?</span>
+          </h2>
+          <p class="qa-body">
+            At IMJ-CORE, we break down the importance of each computer component in clear and simple language. From the CPU to the power supply, we explain what each part does and why it matters — without the confusing technical jargon. Our goal is to help beginners understand the basics of hardware so they can see how every piece fits into the bigger picture of a computer.
+          </p>
+        </div>
+
+        <div class="name-card reveal">
+          <h2 class="qa-heading">
+            <span class="word-accent">About</span><span class="word-plain"> The Name</span>
+          </h2>
+          <p class="qa-body">
+            <strong>IMJ</strong> represents the initials of our team members, arranged in a way that sounds like the word "image." This reflects how our website uses visuals to help visitors easily understand and visualize different PC components.
+            <br><br>
+            <strong>Core</strong> carries a deeper meaning. The <strong>CO</strong> stands for Computer, <strong>R</strong> for Reference, and <strong>E</strong> for Education. Together, they represent our mission to serve as a reliable educational reference about computers — going straight to the core of learning and understanding each component's function and importance.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER / CONTACTS — matches components page third-part structure exactly -->
+    <div class="au-third-part">
+
+      <div class="au-community-frame reveal">
+        <div class="au-rectangle"></div>
+        <img class="au-icon" src="assets/Community.png" alt="Community Symbol"/>
+        <div class="au-box-label">r/buildapc Community</div>
+        <p class="au-desc">Reddit community for PC building help and advice</p>
+        <a href="https://www.reddit.com/r/buildapc" target="_blank" rel="noopener noreferrer" class="au-visit-btn">
+          <div class="au-visit-text">Visit</div>
         </a>
-
-        <a href="mailto:meldrich.jose@gmail.com" target="_blank" rel="noopener noreferrer">
-          <div class="text-wrapper-7">meldrich.jose@gmail.com</div>
-        </a>
-
-        <a href="mailto:dddmontoya1906@gmail.com" target="_blank" rel="noopener noreferrer">
-          <div class="text-wrapper-9">dddmontoya1906@gmail.com</div>
-        </a>
-
-        <img class="email1" src="assets/EMAIL.png" />
-        <img class="email2" src="assets/EMAIL.png" />
-        <img class="email3" src="assets/EMAIL.png" />
-
-        <div class="text-wrapper-8">Contacts</div>
       </div>
 
-      <p class="div-2">
-        <span class="text-wrapper-4">About </span>
-        <span class="text-wrapper-10">Us</span>
-      </p>
+      <div class="au-tomshardware-frame reveal">
+        <div class="au-rectangle"></div>
+        <img class="au-icon" src="assets/Hammer.png" alt="Hammer Symbol"/>
+        <div class="au-box-label">Tom's Hardware</div>
+        <p class="au-desc">Latest component reviews and benchmarks</p>
+        <a href="https://www.tomshardware.com" target="_blank" rel="noopener noreferrer" class="au-visit-btn">
+          <div class="au-visit-text">Visit</div>
+        </a>
+      </div>
 
-    </div> <!-- end of .about-us -->
+      <div class="au-pcpartpicker-frame reveal">
+        <div class="au-rectangle"></div>
+        <img class="au-icon" src="assets/Book.png" alt="Book Symbol"/>
+        <div class="au-box-label">PCPartPicker</div>
+        <p class="au-desc">Build compatibility checker and price comparison</p>
+        <a href="https://pcpartpicker.com" target="_blank" rel="noopener noreferrer" class="au-visit-btn">
+          <div class="au-visit-text">Visit</div>
+        </a>
+      </div>
+
+      <footer class="au-footer"><p class="au-p">© 2025 IMJ-CORE. Educational content for learning purposes.</p></footer>
+    </div>
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
   </body>
 </html>
