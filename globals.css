@@ -134,6 +134,7 @@ a {
   .mobile-nav .About-Us {
     margin: 0 !important;
     width: auto !important; height: auto !important;
+    font-family: 'NicoMoji', sans-serif !important; /* ← FIX: explicit font so it doesn't inherit body font from About Us page */
     font-size: 15px !important;
     color: #ffffff !important;
     white-space: nowrap;
