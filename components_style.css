@@ -31,7 +31,7 @@ body {
 }
 
 /* ============================================================
-   HEADER — exactly matches index.html / styles.css
+   HEADER
    ============================================================ */
 .components .header-bar {
   position: fixed;
@@ -148,16 +148,6 @@ body {
   display: none;
 }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  cursor: pointer;
-  z-index: 1100;
-  flex-shrink: 0;
-}
 
 .hamburger span {
   display: block;
@@ -168,54 +158,6 @@ body {
   transition: 0.3s ease;
 }
 
-.mobile-nav {
-  display: none;
-  position: fixed;
-  top: 0; right: 0;
-  width: 200px;
-  height: 100vh;
-  background-color: #111;
-  z-index: 1050;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 20px;
-  box-sizing: border-box;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-}
-
-.menu-toggle:checked ~ .mobile-nav {
-  display: flex;
-  transform: translateX(0);
-}
-
-.mobile-nav .home,
-.mobile-nav .components-button,
-.mobile-nav .tier-chart,
-.mobile-nav .about-us {
-  width: 100% !important;
-  height: 48px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background-color: #ee8a10;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.mobile-nav .Home,
-.mobile-nav .Components,
-.mobile-nav .Tier-Chart,
-.mobile-nav .About-Us {
-  font-family: 'NicoMoji', sans-serif;
-  font-weight: 400;
-  color: #030202;
-  font-size: 16px;
-  white-space: nowrap;
-  margin: 0 !important;
-}
 
 @media screen and (max-width: 1194px) {
   .components .header-nav { display: none !important; }
