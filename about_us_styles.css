@@ -454,3 +454,13 @@ a { text-decoration: none; color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; }
 }
+
+.mobile-nav-close {
+  display: none;
+}
+
+@media screen and (max-width: 1194px) {
+  .mobile-nav-close {
+    display: block;
+  }
+}

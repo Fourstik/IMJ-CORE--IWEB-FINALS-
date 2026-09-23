@@ -772,3 +772,13 @@
     width: 100% !important;
   }
 }
+
+.mobile-nav-close {
+  display: none;
+}
+
+@media screen and (max-width: 1194px) {
+  .mobile-nav-close {
+    display: block;
+  }
+}

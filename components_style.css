@@ -163,11 +163,11 @@ body {
    ============================================================ */
 .components .main-page-black-part {
   position: relative;
-  top: 40px; left: 0;
+  top: 0; left: 0;
   width: 100%; height: auto;
-  min-height: 1400px; padding-bottom: 50px;
+  min-height: unset; padding-bottom: 50px;
   background-color: #000000; overflow: hidden;
-  margin-top: 60px;
+  margin-top: 0;
 }
 
 .components .learn-about-every {
@@ -257,10 +257,12 @@ body {
   position: relative;
   width: 100%; height: 21px;
   background-color: #ee8a10;
+  margin: 0;
+  display: block;
 }
 
 .components .third-part {
-  position: relative; top: auto; margin-top: 100px; left: 0;
+  position: relative; top: auto; margin-top: 0; left: 0;
   width: 100%; height: 383px;
   background-color: #ee8a10; overflow: visible;
 }
@@ -353,7 +355,7 @@ body {
   .components .AI-generated-orange { display: none; }
   .components .main-page-black-part {
     top: 0 !important; margin-top: 0 !important;
-    padding-top: 70px !important; min-height: unset !important;
+    padding-top: 16px !important; min-height: unset !important;
   }
   .components .learn-about-every { display: none !important; }
 }
@@ -422,8 +424,8 @@ body {
     align-items: flex-start !important; justify-content: center !important;
     gap: clamp(8px, 2vw, 24px) !important;
     padding: 82px clamp(16px, 4vw, 40px) 0 !important;
-    box-sizing: border-box !important; height: 430px !important;
-    overflow: visible !important; margin-top: 100px !important;
+    box-sizing: border-box !important; height: auto !important;
+    overflow: visible !important; margin-top: 0 !important;
   }
   .components .community-frame, .components .tomshardware-frame,
   .components .pcpartpicker-frame {
@@ -464,5 +466,15 @@ body {
   .components .footer {
     position: absolute !important; top: 340px !important;
     left: 0 !important; width: 100% !important; height: 86px !important; margin: 0 !important;
+  }
+}
+
+.mobile-nav-close {
+  display: none;
+}
+
+@media screen and (max-width: 1194px) {
+  .mobile-nav-close {
+    display: block;
   }
 }
