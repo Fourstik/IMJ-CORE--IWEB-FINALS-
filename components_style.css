@@ -148,7 +148,6 @@ body {
   display: none;
 }
 
-
 @media screen and (max-width: 1194px) {
   .components .header-nav { display: none !important; }
   .hamburger { display: flex; }
@@ -251,18 +250,17 @@ body {
 }
 
 /* ============================================================
-   VISIT SECTION
+   VISIT SECTION — copied exactly from index styles.css
    ============================================================ */
 .components .frame-4 {
   position: relative;
   width: 100%; height: 21px;
   background-color: #ee8a10;
-  margin: 0;
-  display: block;
+  margin: 0; display: block;
 }
 
 .components .third-part {
-  position: relative; top: auto; margin-top: 0; left: 0;
+  position: relative; top: auto; left: 0;
   width: 100%; height: 383px;
   background-color: #ee8a10; overflow: visible;
 }
@@ -280,6 +278,33 @@ body {
   color: #ffffff; font-size: 13px;
   letter-spacing: 0; line-height: normal; text-align: center;
   margin: 0; padding: 0;
+}
+
+.components .community-frame {
+  position: absolute;
+  top: 82px; left: 50%;
+  transform: translateX(-50%);
+  width: 402px; height: 220px;
+  background-color: #030202; border-radius: 25px;
+  overflow: hidden; opacity: 0.8;
+}
+
+.components .tomshardware-frame {
+  position: absolute;
+  top: 82px; left: 50%;
+  transform: translateX(calc(50% + 118px));
+  width: 402px; height: 220px;
+  background-color: #030202; border-radius: 25px;
+  overflow: hidden; opacity: 0.8;
+}
+
+.components .pcpartpicker-frame {
+  position: absolute;
+  top: 82px; left: 50%;
+  transform: translateX(calc(-150% - 118px));
+  width: 402px; height: 220px;
+  background-color: #030202; border-radius: 25px;
+  overflow: hidden; opacity: 0.8;
 }
 
 .components .rectangle {
@@ -310,13 +335,7 @@ body {
   letter-spacing: 0; line-height: normal;
 }
 
-.components .buildapc-desc {
-  position: absolute; top: 123px; left: 27px;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
-  color: #ffffff; font-size: 11px; text-align: center;
-  letter-spacing: 0; line-height: normal; white-space: nowrap;
-}
-
+.components .buildapc-desc,
 .components .tomshardware-desc {
   position: absolute; top: 123px; left: 45px;
   font-family: 'NicoMoji', sans-serif; font-weight: 400;
@@ -349,39 +368,29 @@ body {
 }
 
 /* ============================================================
-   MOBILE — eliminate black gap below header
+   RESPONSIVE — copied exactly from index styles.css
    ============================================================ */
-@media screen and (max-width: 768px) {
-  .components .AI-generated-orange { display: none; }
-  .components .main-page-black-part {
-    top: 0 !important; margin-top: 0 !important;
-    padding-top: 16px !important; min-height: unset !important;
-  }
-  .components .learn-about-every { display: none !important; }
-}
-
-/* ============================================================
-   MOBILE — third-part & footer
-   ============================================================ */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1194px) {
   .components .third-part {
-    height: auto !important; overflow: visible !important;
-    display: flex !important; flex-direction: column !important;
-    align-items: center !important; gap: 20px !important;
-    padding: 24px 0 0 !important; margin-top: 40px !important;
-  }
-  .components .community-frame, .components .tomshardware-frame,
-  .components .pcpartpicker-frame {
+    order: 5;
     position: relative !important; top: auto !important;
-    left: auto !important; transform: none !important;
+    width: 100% !important; height: auto !important;
+    display: flex !important; flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    padding: 24px 0 0 !important;
+  }
+  .components .community-frame,
+  .components .tomshardware-frame,
+  .components .pcpartpicker-frame {
+    position: relative !important;
+    top: auto !important; left: auto !important; transform: none !important;
     width: calc(100% - 32px) !important; max-width: 360px !important;
     height: auto !important; overflow: visible !important;
     display: flex !important; flex-direction: column !important;
-    align-items: center !important; padding: 20px 16px !important;
-    gap: 8px !important; box-sizing: border-box !important;
-    background-color: #030202 !important;
-    border-radius: 25px !important;
-    opacity: 0.8 !important;
+    align-items: center !important;
+    padding: 20px 16px !important; gap: 8px !important;
+    box-sizing: border-box !important;
   }
   .components .rectangle {
     position: relative !important; top: auto !important; left: auto !important; flex-shrink: 0;
@@ -394,92 +403,70 @@ body {
     position: relative !important; top: auto !important; left: auto !important;
     width: 100% !important; text-align: center !important;
   }
-  .components .buildapc-desc, .components .tomshardware-desc,
-  .components .pcpartpicker-desc {
+  .components .buildapc-desc, .components .tomshardware-desc, .components .pcpartpicker-desc {
     position: relative !important; top: auto !important; left: auto !important;
     width: 100% !important; text-align: center !important; white-space: normal !important;
   }
   .components .div-wrapper {
     position: relative !important; top: auto !important; left: auto !important;
-    margin-top: 8px !important; align-self: center !important;
+    margin-top: auto !important; align-self: center !important;
   }
   .components .footer {
     position: relative !important; top: auto !important; left: auto !important;
-    width: 100% !important; height: auto !important; min-height: 86px !important;
-    margin: 0 !important; padding: 16px !important;
-    box-sizing: border-box !important; order: 99; flex-shrink: 0;
-    align-self: stretch !important; display: flex !important;
-    justify-content: center !important; align-items: center !important;
+    width: 100% !important; height: auto !important; padding: 16px !important;
+    box-sizing: border-box !important; order: 99;
+    display: flex !important; justify-content: center !important; align-items: center !important;
     background-color: #000000 !important;
   }
   .components .p { white-space: normal !important; text-align: center !important; }
 }
 
-/* ============================================================
-   DESKTOP — three resource cards side by side
-   ============================================================ */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 600px) and (max-width: 1194px) {
   .components .third-part {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
+    flex-direction: row !important; flex-wrap: wrap !important;
     justify-content: center !important;
-    gap: clamp(8px, 2vw, 24px) !important;
-    padding: 82px clamp(16px, 4vw, 40px) 0 !important;
-    box-sizing: border-box !important;
-    height: 383px !important;        /* ← match index exactly */
-    overflow: visible !important;
-    margin-top: 0 !important;
+    padding: 24px 12px 0 !important; gap: 12px !important;
+    align-items: stretch !important;
   }
-  .components .community-frame, .components .tomshardware-frame,
+  .components .community-frame,
+  .components .tomshardware-frame,
+  .components .pcpartpicker-frame {
+    flex: 1 1 0 !important; min-width: 180px !important;
+    max-width: 280px !important; width: auto !important;
+    display: flex !important; flex-direction: column !important;
+    align-items: center !important;
+  }
+  .components .footer { width: 100% !important; flex: 0 0 100% !important; }
+}
+
+@media screen and (min-width: 1195px) {
+  .components .third-part {
+    display: flex !important; flex-direction: row !important;
+    align-items: flex-start !important; justify-content: center !important;
+    gap: 24px !important; padding: 82px 40px 0 !important;
+    box-sizing: border-box !important;
+  }
+  .components .community-frame,
+  .components .tomshardware-frame,
   .components .pcpartpicker-frame {
     position: relative !important; top: auto !important;
     left: auto !important; transform: none !important;
-    flex: 1 1 0 !important; min-width: 0 !important;
-    max-width: 402px !important; width: auto !important;
-    height: 220px !important;        /* ← fixed height like index */
-    min-height: unset !important;
-    overflow: hidden !important; display: flex !important;
-    flex-direction: column !important; align-items: center !important;
-    padding: 20px 16px !important; gap: 8px !important;
-    box-sizing: border-box !important;
-    background-color: #030202; border-radius: 25px; opacity: 0.8;
-  }
-  .components .community-frame .rectangle, .components .tomshardware-frame .rectangle,
-  .components .pcpartpicker-frame .rectangle {
-    position: relative !important; top: auto !important; left: auto !important; flex-shrink: 0;
-  }
-  .components .community-frame .community, .components .tomshardware-frame .hammer,
-  .components .pcpartpicker-frame .book {
-    position: relative !important; top: auto !important; left: auto !important;
-    margin-top: -50px !important; flex-shrink: 0; z-index: 1;
-  }
-  .components .box-label {
-    position: relative !important; top: auto !important; left: auto !important;
-    width: 100% !important; text-align: center !important;
-  }
-  .components .buildapc-desc, .components .tomshardware-desc,
-  .components .pcpartpicker-desc {
-    position: relative !important; top: auto !important; left: auto !important;
-    width: 100% !important; text-align: center !important; white-space: normal !important;
-  }
-  .components .community-frame .div-wrapper, .components .tomshardware-frame .div-wrapper,
-  .components .pcpartpicker-frame .div-wrapper {
-    position: relative !important; top: auto !important; left: auto !important;
-    align-self: center !important; margin-top: auto !important;
+    flex: 1 1 0 !important; max-width: 402px !important;
+    height: 220px !important; overflow: hidden !important;
   }
   .components .footer {
     position: absolute !important; top: 340px !important;
-    left: 0 !important; width: 100% !important; height: 86px !important; margin: 0 !important;
+    left: 0 !important; width: 100% !important;
   }
 }
 
-/* Hide the X close button on desktop */
+/* ============================================================
+   MOBILE NAV CLOSE BUTTON
+   ============================================================ */
 .mobile-nav-close {
   display: none;
 }
 
-/* Only show it on mobile */
 @media screen and (max-width: 1194px) {
   .mobile-nav-close {
     display: block;
