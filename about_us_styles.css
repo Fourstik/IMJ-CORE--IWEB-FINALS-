@@ -516,3 +516,19 @@ a { text-decoration: none; color: inherit; }
 @media screen and (max-width: 1194px) {
   .mobile-nav-close { display: block; }
 }
+
+/* FOOTER FIX */
+@media screen and (max-width: 1194px) {
+  .third-part {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .community-frame,
+  .tomshardware-frame,
+  .pcpartpicker-frame {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+}

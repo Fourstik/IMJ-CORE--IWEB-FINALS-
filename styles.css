@@ -782,3 +782,19 @@
     display: block;
   }
 }
+
+/* FOOTER FIX */
+@media screen and (max-width: 1194px) {
+  .landing-page .third-part {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .landing-page .community-frame,
+  .landing-page .tomshardware-frame,
+  .landing-page .pcpartpicker-frame {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+}

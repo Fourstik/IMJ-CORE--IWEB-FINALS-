@@ -472,3 +472,19 @@ body {
     display: block;
   }
 }
+
+/* FOOTER FIX */
+@media screen and (max-width: 1194px) {
+  .components .third-part {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .components .community-frame,
+  .components .tomshardware-frame,
+  .components .pcpartpicker-frame {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+}
