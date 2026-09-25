@@ -932,24 +932,163 @@
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1194px) {
-  .DETAILS {
-    overflow-x: hidden !important;
-    min-height: 0 !important;
-    height: calc(1653px * 0.72) !important;
-    overflow-y: hidden !important;
+@media screen and (min-width: 769px) and (max-width: 1500px) {
+  .DETAILS .frame-8 {
+    width: calc(100% - 32px) !important;
+    max-width: 1461px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ============================================================
+   TABLET & LAPTOP RESPONSIVE FIX FOR MAIN CARD (.frame-8)
+   ============================================================ */
+@media screen and (min-width: 769px) and (max-width: 1480px) {
+
+  /* 1. Frosted pill container positioned below header */
+  .DETAILS .frame-7 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 140px auto 0 auto !important;
+    width: calc(100% - 48px) !important;
+    max-width: 870px !important;
+    height: 90px !important;
+    box-sizing: border-box !important;
   }
 
-  /* Scale the entire inner content to fit */
-  .DETAILS > *:not(.AI-generated-orange):not(.header-bar):not(.menu-toggle) {
-    zoom: 0.72;
+  /* 2. Banner text inside pill */
+  .DETAILS .essential-computer {
+    position: relative !important;
+    top: -90px !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    margin: 0 auto -90px auto !important;
+    width: calc(100% - 48px) !important;
+    max-width: 870px !important;
+    height: 90px !important;
+    line-height: 90px !important;
+    font-size: clamp(20px, 3.2vw, 40px) !important;
+    text-align: center !important;
+    color: #ffffff !important;
+    z-index: 10 !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
   }
 
-  /* Fix the background image to still cover properly */
-  .DETAILS .AI-generated-orange {
-    position: fixed !important;
+  /* 3. Main card */
+  .DETAILS .frame-8 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: calc(100% - 48px) !important;
+    max-width: 1461px !important;
+    height: auto !important;
+    min-height: fit-content !important;
+    margin: 30px auto 0 auto !important;
+    padding: 40px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    overflow: visible !important;
+  }
+
+  /* 4. Pull the entire bottom section up to close the gap */
+  .DETAILS .overlap-group2,
+  .DETAILS .overlap-2 {
+    position: relative !important;
+    top: -600px !important; /* Pulls footer area up right under frame-8 */
+    margin-bottom: -350px !important; /* Prevents overflow white space at page bottom */
+  }
+
+  /* 5. Hide legacy decoration */
+  .DETAILS .information {
+    display: none !important;
+  }
+
+  /* 6. Internal card content layout */
+  .DETAILS .component-pic,
+  .DETAILS .text-wrapper-14,
+  .DETAILS .text-wrapper-13,
+  .DETAILS .key-features,
+  .DETAILS .fun-fact,
+  .DETAILS .home-button-2 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
     width: 100% !important;
-    height: 100vh !important;
-    object-fit: cover !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  .DETAILS .text-wrapper-14 {
+    font-size: clamp(32px, 4vw, 58px) !important;
+    text-align: center !important;
+    order: 1;
+  }
+
+  .DETAILS .component-pic {
+    max-width: 500px !important;
+    margin: 0 auto !important;
+    order: 2;
+  }
+
+  .DETAILS .text-wrapper-13 {
+    font-size: clamp(18px, 2vw, 24px) !important;
+    line-height: 1.4 !important;
+    order: 3;
+  }
+
+  .DETAILS .key-features {
+    font-size: clamp(16px, 1.8vw, 20px) !important;
+    line-height: 1.5 !important;
+    color: #ff7411 !important;
+    order: 4;
+  }
+
+  .DETAILS .fun-fact {
+    font-size: clamp(16px, 1.8vw, 20px) !important;
+    line-height: 1.5 !important;
+    color: #ffffff !important;
+    order: 5;
+  }
+
+  /* 7. Button container & text centering */
+  .DETAILS .home-button-2 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: auto !important;
+    min-width: 180px !important;
+    max-width: 240px !important;
+    height: 48px !important;
+    margin: 10px auto 0 auto !important;
+    padding: 0 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+    order: 6;
+  }
+
+  .DETAILS .home-button-2 * {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    width: auto !important;
+    height: auto !important;
   }
 }
