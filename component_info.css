@@ -9,7 +9,7 @@
   background-color: #ffffff;
   overflow: hidden;
   width: 100%;
-  min-width: 1440px;
+  min-width: 0;
   min-height: 1653px;
   position: relative;
 }
@@ -929,5 +929,27 @@
 @media screen and (max-width: 1194px) {
   .mobile-nav-close {
     display: block;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1194px) {
+  .DETAILS {
+    overflow-x: hidden !important;
+    min-height: 0 !important;
+    height: calc(1653px * 0.72) !important;
+    overflow-y: hidden !important;
+  }
+
+  /* Scale the entire inner content to fit */
+  .DETAILS > *:not(.AI-generated-orange):not(.header-bar):not(.menu-toggle) {
+    zoom: 0.72;
+  }
+
+  /* Fix the background image to still cover properly */
+  .DETAILS .AI-generated-orange {
+    position: fixed !important;
+    width: 100% !important;
+    height: 100vh !important;
+    object-fit: cover !important;
   }
 }
