@@ -197,19 +197,24 @@ a { text-decoration: none; }
 .tier-table tbody tr:hover { background: rgba(255,255,255,0.04); }
 
 .tier-table tbody td {
-  font-size: clamp(11px, 1.3vw, 17px);
-  font-family: 'NicoMoji', sans-serif;
+  font-size: clamp(12px, 1.3vw, 16px);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
   color: #fff; padding: 14px 10px;
   text-align: center; vertical-align: middle;
   line-height: 1.4;
 }
 .tier-table tbody td:first-child {
   text-align: left; color: #ff7411;
+  font-family: 'NicoMoji', sans-serif;
   font-size: clamp(11px, 1.2vw, 16px);
   font-weight: 700; letter-spacing: 0.05em;
   padding-left: 4px;
 }
 
+/* ============================================================
+   GUIDE SECTION
+   ============================================================ */
 .guide-section {
   width: 100%; max-width: 1100px;
   margin: 48px auto 0;
@@ -234,13 +239,14 @@ a { text-decoration: none; }
 }
 .guide-card-title {
   font-family: 'NicoMoji', sans-serif;
-  color: #ff7411; font-size: clamp(13px, 1.4vw, 17px);
-  margin-bottom: 6px;
+  color: #ff7411; font-size: clamp(14px, 1.5vw, 18px);
+  margin-bottom: 8px;
 }
 .guide-card-desc {
-  font-family: 'NicoMoji', sans-serif;
-  color: #fff; font-size: clamp(11px, 1.1vw, 14px);
-  line-height: 1.6;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #ffffff; font-size: clamp(12px, 1.1vw, 15px);
+  line-height: 1.5;
 }
 
 /* ============================================================
@@ -286,6 +292,7 @@ a { text-decoration: none; }
   }
   .tier-table tbody td:not(:first-child)::before {
     content: attr(data-label);
+    font-family: 'NicoMoji', sans-serif;
     color: rgba(255,116,17,0.8); font-size: 11px;
     text-align: left; flex-shrink: 0;
     margin-right: 8px; padding-top: 2px;
@@ -295,7 +302,7 @@ a { text-decoration: none; }
 }
 
 /* ============================================================
-   VISIT SECTION — copied exactly from index styles.css
+   VISIT SECTION
    ============================================================ */
 .frame-4 {
   position: relative;
@@ -382,18 +389,14 @@ a { text-decoration: none; }
 }
 
 .buildapc-desc,
-.tomshardware-desc {
-  position: absolute; top: 123px; left: 45px;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
-  color: #ffffff; font-size: 11px; text-align: center;
-  letter-spacing: 0; line-height: normal; white-space: nowrap;
-}
-
+.tomshardware-desc,
 .pcpartpicker-desc {
-  position: absolute; top: 123px; left: 28px;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
+  position: absolute; top: 123px; left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 400;
   color: #ffffff; font-size: 11px; text-align: center;
-  letter-spacing: 0; line-height: normal; white-space: nowrap;
+  letter-spacing: 0; line-height: normal;
 }
 
 .div-wrapper {
@@ -414,7 +417,7 @@ a { text-decoration: none; }
 }
 
 /* ============================================================
-   RESPONSIVE — copied exactly from index styles.css
+   RESPONSIVE — Visit Section
    ============================================================ */
 @media screen and (max-width: 1194px) {
   .third-part {
@@ -450,6 +453,7 @@ a { text-decoration: none; }
   }
   .buildapc-desc, .tomshardware-desc, .pcpartpicker-desc {
     position: relative !important; top: auto !important; left: auto !important;
+    transform: none !important;
     width: 100% !important; text-align: center !important; white-space: normal !important;
   }
   .div-wrapper {
@@ -499,6 +503,15 @@ a { text-decoration: none; }
     left: auto !important; transform: none !important;
     flex: 1 1 0 !important; max-width: 402px !important;
     height: 220px !important; overflow: hidden !important;
+  }
+  .buildapc-desc,
+  .tomshardware-desc,
+  .pcpartpicker-desc {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    text-align: center !important;
+    white-space: nowrap !important;
   }
   .footer {
     position: absolute !important; top: 340px !important;
