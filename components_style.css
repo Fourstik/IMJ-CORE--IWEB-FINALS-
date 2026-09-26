@@ -172,7 +172,7 @@ body {
 .components .learn-about-every {
   position: relative; top: auto; left: auto;
   width: 649px; margin: 50px auto;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 400;
   color: #030202; font-size: 20px; text-align: center;
   letter-spacing: 0; line-height: normal;
 }
@@ -250,7 +250,7 @@ body {
 }
 
 /* ============================================================
-   VISIT SECTION — copied exactly from index styles.css
+   VISIT SECTION
    ============================================================ */
 .components .frame-4 {
   position: relative;
@@ -336,18 +336,14 @@ body {
 }
 
 .components .buildapc-desc,
-.components .tomshardware-desc {
-  position: absolute; top: 123px; left: 45px;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
-  color: #ffffff; font-size: 11px; text-align: center;
-  letter-spacing: 0; line-height: normal; white-space: nowrap;
-}
-
+.components .tomshardware-desc,
 .components .pcpartpicker-desc {
-  position: absolute; top: 123px; left: 28px;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
+  position: absolute; top: 123px; left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 400;
   color: #ffffff; font-size: 11px; text-align: center;
-  letter-spacing: 0; line-height: normal; white-space: nowrap;
+  letter-spacing: 0; line-height: normal;
 }
 
 .components .div-wrapper {
@@ -368,7 +364,7 @@ body {
 }
 
 /* ============================================================
-   RESPONSIVE — copied exactly from index styles.css
+   RESPONSIVE
    ============================================================ */
 @media screen and (max-width: 1194px) {
   .components .third-part {
@@ -405,6 +401,7 @@ body {
   }
   .components .buildapc-desc, .components .tomshardware-desc, .components .pcpartpicker-desc {
     position: relative !important; top: auto !important; left: auto !important;
+    transform: none !important;
     width: 100% !important; text-align: center !important; white-space: normal !important;
   }
   .components .div-wrapper {
@@ -453,6 +450,15 @@ body {
     left: auto !important; transform: none !important;
     flex: 1 1 0 !important; max-width: 402px !important;
     height: 220px !important; overflow: hidden !important;
+  }
+  .components .buildapc-desc,
+  .components .tomshardware-desc,
+  .components .pcpartpicker-desc {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    text-align: center !important;
+    white-space: nowrap !important;
   }
   .components .footer {
     position: absolute !important; top: 340px !important;
