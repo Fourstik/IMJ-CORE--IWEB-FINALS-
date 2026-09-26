@@ -84,7 +84,7 @@
   top: 297px; left: 50%;
   transform: translateX(-50%);
   width: min(649px, 90%);
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 400;
   color: #030202; font-size: 20px; text-align: center;
   letter-spacing: 0; line-height: normal;
 }
@@ -192,10 +192,12 @@
 
 .landing-page .text-wrapper-3 {
   position: absolute;
-  top: 123px; left: 27px;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
+  top: 123px; left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 400;
   color: #ffffff; font-size: 11px; text-align: center;
-  letter-spacing: 0; line-height: normal; white-space: nowrap;
+  letter-spacing: 0; line-height: normal;
 }
 
 .landing-page .div-wrapper {
@@ -238,10 +240,12 @@
 
 .landing-page .text-wrapper-6 {
   position: absolute;
-  top: 123px; left: 45px;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
+  top: 123px; left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 400;
   color: #ffffff; font-size: 11px; text-align: center;
-  letter-spacing: 0; line-height: normal; white-space: nowrap;
+  letter-spacing: 0; line-height: normal;
 }
 
 .landing-page .pcpartpicker-frame {
@@ -261,10 +265,12 @@
 
 .landing-page .text-wrapper-7 {
   position: absolute;
-  top: 123px; left: 28px;
-  font-family: 'NicoMoji', sans-serif; font-weight: 400;
+  top: 123px; left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 400;
   color: #ffffff; font-size: 11px; text-align: center;
-  letter-spacing: 0; line-height: normal; white-space: nowrap;
+  letter-spacing: 0; line-height: normal;
 }
 
 /* HEADER */
@@ -671,6 +677,7 @@
   .landing-page .text-wrapper-7 {
     position: relative !important;
     top: auto !important; left: auto !important;
+    transform: none !important;
     width: 100% !important; text-align: center !important;
     white-space: normal !important;
   }
@@ -762,6 +769,17 @@
     /* Keep original height and overflow so inner absolute elements work */
     height: 220px !important;
     overflow: hidden !important;
+  }
+
+  /* Desktop-only centering fix for card descriptions */
+  .landing-page .text-wrapper-3,
+  .landing-page .text-wrapper-6,
+  .landing-page .text-wrapper-7 {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    text-align: center !important;
+    white-space: nowrap !important;
   }
 
   /* Footer stays absolutely positioned inside third-part */
