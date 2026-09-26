@@ -245,3 +245,10 @@ a {
 .mobile-nav-close:hover {
   color: #ffffff;
 }
+
+.header-logo-link {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: inline-block;
+  cursor: pointer;
+}
