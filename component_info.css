@@ -501,7 +501,7 @@
   width: 640px !important;
   font-family: 'NicoMoji', sans-serif !important;
   color: #ffffff !important;
-  font-size: 26px !important;        
+  font-size: 24px !important;       
   letter-spacing: 0.5px !important;
   line-height: 1.2 !important;
   margin: 0 !important;
@@ -707,15 +707,18 @@
     order: 1;
   }
 
-  .DETAILS .text-wrapper-14 {
+.DETAILS .text-wrapper-14 {
     position: relative !important;
-    top: auto !important; left: auto !important;
+    top: auto !important; 
+    left: auto !important;
     width: 100% !important;
-    font-size: clamp(28px, 8vw, 50px) !important;
+    font-size: clamp(20px, 6vw, 28px) !important; /* Scales smoothly on small screens */
     text-align: center !important;
+    white-space: normal !important;                 /* allows text to wrap on mobile */
+    word-wrap: break-word !important;
     order: 2;
   }
-
+  
   .DETAILS .text-wrapper-13 {
     position: relative !important;
     top: auto !important; left: auto !important;
